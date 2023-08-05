@@ -5,7 +5,13 @@ import { default as indexRouter } from './routes/index.js';
 import { default as servicesRouter } from './api/services/index.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { siteData, main_menu } from './settings_data.js';
+import { 
+	siteData, 
+	main_menu,
+	footer_menu_one,
+	footer_menu_two,
+	footer_menu_three
+} from './settings_data.js';
 
 const app = express();
 const PORT = parseInt(process.env.PORT) || 8080;
@@ -17,7 +23,10 @@ const __dirname = dirname(__filename);
 // Global site info
 app.locals.site = await siteData();
 app.locals.menus = {
-	main_menu
+	main_menu,
+	footer_menu_one,
+	footer_menu_two,
+	footer_menu_three
 };
 
 // Theme layout

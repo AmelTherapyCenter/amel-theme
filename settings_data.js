@@ -66,3 +66,52 @@ export const main_menu = [
         url: '/cost-calculator'
     }
 ]
+
+export const footer_menu_one = [
+    {
+        title: 'Home',
+        url: '/'
+    },
+    {
+        title: 'About Us',
+        url: '/about'
+    },
+    {
+        title: 'Blog',
+        url: '/blog'
+    },
+    {
+        title: 'Search',
+        url: '/search'
+    },
+]
+
+export const footer_menu_two = [
+    {
+        title: 'Tree Removal',
+        url: '/services/tree-removal',
+    },
+    {
+        title: 'Tree Trimming',
+        url: '/services/tree-trimming',
+    },
+    {
+        title: 'All Services',
+        url: '/all-services'
+    },
+]
+
+export const footer_menu_three = [
+    {
+        title: 'Contact Us',
+        url: '/contact-us'
+    },
+    {
+        title: 'Cost Calculator',
+        url: '/cost-calculator'
+    },
+    {
+        title: 'FAQ',
+        url: '/faq'
+    }
+]
