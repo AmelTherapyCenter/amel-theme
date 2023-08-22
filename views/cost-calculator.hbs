@@ -1,0 +1,76 @@
+<div class="section about-us-banner wf-section">
+    <div class="base-container w-container">
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="banner-slider-container">
+        <h1 class="heading-banner">Cost <span class="heading-text-span">Calculator</span></h1>
+      </div>
+    </div>
+  </div>
+  <div class="section none-bottom-padding wf-section">
+    <div class="base-container w-container">
+      <div class="section-title-wrapper">
+        <h2 id="provide-assistance" data-w-id="el_scroll_into_view" style="opacity:0" class="heading-span margin-bottom-heading">Say Goodbye To The Guesswork And Hello To <span class="heading-text-span color-green">Transparency</span></h2>
+        <div data-w-id="el_scroll_into_view" style="opacity:0" class="paragraph-large max-w">Are you looking for professional, reliable, and affordable tree services? We are dedicated to providing exceptional tree care tailored to your unique needs in South Florida: Hollywood, Davie, Sunrise, Southwest Ranches, and Plantation. We understand that determining the cost of tree services can be challenging, which is why we&#x27;ve developed a user-friendly online tool that generates estimated prices quickly and accurately.<br><br>Get started today and unlock professional tree care services tailored to your budget and requirements. We&#x27;re here to make your tree care journey hassle-free, transparent, and rewarding. Don&#x27;t wait – let&#x27;s get your estimate now!</div>
+      </div>
+    </div>
+  </div>
+<section class="section-2 is--main section" data-w-id="el_scroll_into_view">
+    <div class="hero">
+      <div class="hero_img">
+        <div class="hero_wrap">
+          <div class="is--complete">
+            <h6 class="survey-header">Your Price Estimate</h6>
+            <p class="price-sub price-low">Estimated Low Price: </p>
+            <p class="price-sub price-high">Estimated High Price: </p>
+            <p class="price-disclaim">Please note that the estimates provided by the online tool are preliminary and subject to change based on a thorough assessment during an in person consultation. We are committed to providing you with the most accurate pricing possible.</p>
+            <a href="tel:{{ site.phone_number }}" class="primary-button survey-btn">Call Now</a>
+          </div>
+          <div class="hero_bottom">
+            <p class="hero-btm"><span class="answered-questions"> </span> / <span class="total-questions"> </span> answered</p>
+            <div class="progress">
+              <div class="progress_bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-2">
+      <div class="question_wrap w-dyn-list">
+        <div role="list" class="question_list w-dyn-items">
+            {{#each cost_calculator_questions}}
+            <div role="listitem" class="question_item last-question w-dyn-item">
+                <h2 class="heading-4">{{this.question}}</h2>
+                <div class="question_options">
+                    {{#each this.answers}}
+                    <a data-multiplier="{{this.multiplier}}" data-price-low="{{this.low}}" data-price-high="{{this.high}}" href="#" class="option w-inline-block">
+                        <h6 class="option_text">{{this.text}}</h6>
+                        <div class="option_embed w-embed">
+                            <div class="status "></div>
+                        </div>
+                        <div class="option_circle"><img src="/images/check.svg" loading="lazy" alt="" class="option_icon is--check"><img src="/images/x.svg" loading="lazy" alt="" class="option_icon is--x"></div>
+                    </a>
+                    {{/each}}
+                </div>
+                <div class="answer is--wrong">
+                <div class="answer_dot"></div>
+                <p>The correct answer is <span class="correct-answer"> </span></p>
+                </div>
+                <div class="answer is--right">
+                <div class="answer_dot is--blue"></div>
+                <p>That&#x27;s correct! Way to go</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+      </div>
+      <a href="#" class="primary-button survey-btn">Check Estimate</a>
+    </div>
+  </section>
+  <div class="section wf-section">
+    <div class="base-container w-container">
+      <div data-w-id="el_scroll_into_view" class="free-trial-wrapper">
+        <h2 id="provide-assistance" class="heading-span margin-bottom">Your Trees Need a Bit of Love? <span class="heading-text-span color-green">We can help!</span></h2>
+        <a href="tel:{{ site.phone_number }}" class="primary-button">Click to call now</a>
+      </div>
+    </div>
+  </div>
+<script src="/js/cost-calculator.js"></script>

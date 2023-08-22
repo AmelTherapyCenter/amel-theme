@@ -12,6 +12,7 @@
     --color-yellow: #ffbe40;
     --color-green: #204e51;
     --color-grey: #606060;
+    --color-dark: #184044;
 
     --color-primary: var(--color-yellow);
     --color-primary-text: var(--color-green);
@@ -94,6 +95,10 @@ img {
 }
 
 /***** Reusable Classes *****/
+.dark-bg {
+    background-color: var(--color-dark)!important;
+}
+
 .flex {
     display: flex;
 }

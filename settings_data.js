@@ -19,99 +19,124 @@ export const siteData = async () => {
     }
 }
 
-// export const site_data = {
-// 	name: 'Broward Tree Techs',
-// 	handle: 'broward-tree-techs',
-// 	description: "We offer tree removal & trimming services in South Florida. We are all licensed & insured with a great personable crew that has an unmatched work ethic. We're an ethical company that is local to Hollywood and we're committed to giving you best tree care in South Florida: Hollywood, Davie, Sunrise, Southwest Ranches, and Plantation.",
-// 	phone_number: '954-408-2313',
-// 	seo_title: 'Tree Services Of Broward',
-// 	locations: [
-// 		'Hollywood',
-// 		'Sunrise',
-// 		'Davie',
-// 		'Plantation',
-// 		'Southwest Ranches'
-// 	]
-// }
+export const getMenu = async (slug) => {
+    try {
+        const res = await fetch(`${ADMIN_API_HOST}/api/site/navigation/${SITE_MONGO_ID}/slug-${slug}`, {
+            method: "GET",
+        });
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+        throw error(404, 'Not found');
+    }
+}
 
-export const main_menu = [
+export const cost_calculator_questions = [
     {
-        title: 'Home',
-        url: '/'
-    },
-    {
-        title: 'Services',
-        url: '/services',
-        links: [
+        question: "What is your project timeframe?",
+        answers: [
             {
-                title: 'Tree Removal',
-                url: '/services/tree-removal',
+                text: "Immediately",
+                low: "",
+                high: "",
+                multiplier: 2.0
             },
             {
-                title: 'Tree Trimming',
-                url: '/services/tree-trimming',
+                text: "In more than two weeks",
+                low: "",
+                high: "",
+                multiplier: 1.5
+            },
+            {
+                text: "Flexible timing",
+                low: "",
+                high: "",
+                multiplier: 1.0
             }
         ]
     },
     {
-        title: 'About',
-        url: '/about'
+        question: "What type of property is it?",
+        answers: [
+            {
+                text: "Home",
+                low: "",
+                high: "",
+                multiplier: 1.0
+            },
+            {
+                text: "Business",
+                low: "",
+                high: "",
+                multiplier: 1.5
+            }
+        ]
     },
     {
-        title: 'Blog',
-        url: '/blog'
+        question: "Is the property outside of our service areas?",
+        answers: [
+            {
+                text: "Yes",
+                low: "",
+                high: "",
+                multiplier: 1.5
+            },
+            {
+                text: "No",
+                low: "",
+                high: "",
+                multiplier: 1.0
+            }
+        ]
     },
     {
-        title: 'Cost Calculator',
-        url: '/cost-calculator'
-    }
-]
-
-export const footer_menu_one = [
-    {
-        title: 'Home',
-        url: '/'
+        question: "How many trees are involved?",
+        answers: [
+            {
+                text: "5+",
+                low: "",
+                high: "",
+                multiplier: 4.8
+            },
+            {
+                text: "4-5",
+                low: "",
+                high: "",
+                multiplier: 3.8
+            },
+            {
+                text: "2-3",
+                low: "",
+                high: "",
+                multiplier: 1.8
+            },
+            {
+                text: "1",
+                low: "",
+                high: "",
+                multiplier: 1.0
+            }
+        ]
     },
     {
-        title: 'About Us',
-        url: '/about'
+        question: "Which tree services do you need?",
+        answers: [
+            {
+                text: "Tree Trimming",
+                low: "255",
+                high: "655"
+            },
+            {
+                text: "Tree Removal",
+                low: "750",
+                high: "1500",
+            },
+            {
+                text: "Stump Removal",
+                low: "150",
+                high: "500",
+            }
+        ]
     },
-    {
-        title: 'Blog',
-        url: '/blog'
-    },
-    {
-        title: 'Search',
-        url: '/search'
-    },
-]
-
-export const footer_menu_two = [
-    {
-        title: 'Tree Removal',
-        url: '/services/tree-removal',
-    },
-    {
-        title: 'Tree Trimming',
-        url: '/services/tree-trimming',
-    },
-    {
-        title: 'All Services',
-        url: '/all-services'
-    },
-]
-
-export const footer_menu_three = [
-    {
-        title: 'Contact Us',
-        url: '/contact-us'
-    },
-    {
-        title: 'Cost Calculator',
-        url: '/cost-calculator'
-    },
-    {
-        title: 'FAQ',
-        url: '/faq'
-    }
 ]

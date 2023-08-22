@@ -59,9 +59,21 @@
 
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RX32ML7HTB"></script>
     <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-RX32ML7HTB');</script>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-  <div data-animation="over-left" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" data-doc-height="1" role="banner" class="navbar-second navbar-home-2 w-nav">
+  <div 
+    data-animation="over-left" 
+    data-collapse="medium" 
+    data-duration="400" 
+    data-easing="ease" 
+    data-easing2="ease" 
+    data-doc-height="1" 
+    role="banner" 
+    class="navbar-second navbar-home-2 w-nav{{#if dark_bg }} dark-bg{{/if}}"
+  >
     <div class="base-container home-2 w-container">
       <nav role="navigation" class="nav-menu-content w-nav-menu">
         <div class="tablet-menu-logo">
@@ -99,7 +111,7 @@
         </a>
 
         <div class="navigation-link">
-          {{#each menus.main_menu }}
+          {{#each menus.main_menu.links }}
             {{#if this.links}}
               <div data-hover="true" data-delay="0" data-w-id="0fcf8eb7-f2f0-03a0-f67a-78e583b68d8c" class="nav-dropdown margin w-dropdown">
                 <div class="nav-dropdown-toggle-2 none-padding w-dropdown-toggle">
@@ -175,20 +187,20 @@
           </div>
           <div class="div-block-7">
             <div class="footer-links-wrapper">
-              <h5 class="white-text footer-head">Company</h5>
-              {{#each menus.footer_menu_one }}
+              <h5 class="white-text footer-head">{{ menus.footer_menu_one.title }}</h5>
+              {{#each menus.footer_menu_one.links }}
                 <a href="{{ this.url }}" aria-current="page" class="footer-link w--current">{{ this.title }}</a>
               {{/each}}
             </div>
             <div class="footer-links-wrapper">
-              <h5 class="white-text footer-head">Services</h5>
-              {{#each menus.footer_menu_two }}
+              <h5 class="white-text footer-head">{{ menus.footer_menu_two.title }}</h5>
+              {{#each menus.footer_menu_two.links }}
                 <a href="{{ this.url }}" aria-current="page" class="footer-link w--current">{{ this.title }}</a>
               {{/each}}
             </div>
             <div class="footer-links-wrapper">
-              <h5 class="white-text footer-head">Contact</h5>
-              {{#each menus.footer_menu_three }}
+              <h5 class="white-text footer-head">{{ menus.footer_menu_three.title }}</h5>
+              {{#each menus.footer_menu_three.links }}
                 <a href="{{ this.url }}" aria-current="page" class="footer-link w--current">{{ this.title }}</a>
               {{/each}}
             </div>

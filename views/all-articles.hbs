@@ -1,0 +1,99 @@
+ <div class="section-heading banner-blog-classic wf-section">
+    <div class="base-container w-container">
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="banner-slider-container none-padding-bottom">
+        <h1 class="heading-section-banner">Our <span class="heading-text-span">Blog</span></h1>
+      </div>
+    </div>
+  </div>
+  <div class="section blog-sidebar wf-section">
+    <div class="base-container w-container">
+      <div class="blog-sidebar-wrapper">
+        <div data-w-id="el_scroll_into_view" style="opacity:0" class="blog-sidebar-left-wrapper">
+          <div class="w-dyn-list">
+            <div role="list" class="blog-sidebar-left w-dyn-items">
+                {{#each articles}}
+                    <div role="listitem" class="blog-sidebar-item w-dyn-item">
+                        <article>
+                            <a href="/categories/{{ this.categories.[0] }}" class="category-link-blog-post">{{ this.categories.[0] }}</a>
+                            <a href="/blog/{{ this.slug }}" class="blog-sidebar-post-image-link w-inline-block">
+                                <img
+                                    src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ this.main_image }}"
+                                    loading="lazy" 
+                                    alt="{{ this.topic }}" 
+                                    class="blog-sidebar-post-image"
+                                >
+                            </a>
+                            <div class="blog-sidebar-post-content">
+                                <a href="{{ this.slug }}" class="w-inline-block">
+                                    <h4 class="blog-post-title">{{ this.topic }}</h4>
+                                </a>
+                                <p class="paragraph-2">{{ this.description }}</p>
+                            </div>
+                        </article>
+                    </div>
+                {{/each}}
+            </div>
+          </div>
+        </div>
+        <div class="blog-sidebar-right-wrapper">
+          <div class="blog-sidebar-right">
+            <div data-w-id="el_scroll_into_view" style="opacity:0" class="sidebar-recent-posts">
+              <h4>Recent Posts</h4>
+              <div class="sidebar-recent-posts-wrapper w-dyn-list">
+                <div role="list" class="w-dyn-items">
+                    <div role="listitem" class="sidebar-recent-post-item w-dyn-item">
+                        <article>
+                            <a href="/blog/{{ articles.[0].slug }}" class="sidebar-recent-post w-inline-block">
+                                <div class="image-block-resent-post">
+                                    <img 
+                                        src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ articles.[0].main_image }}"
+                                        loading="lazy" 
+                                        alt="{{ articles.[0].topic }}" 
+                                        class="sidebar-recent-post-image"
+                                    >
+                                </div>
+                                <div class="div-block">
+                                    <h6 class="blog-recent-post-title">{{ articles.[0].topic }}</h6>
+                                    <p class="blog-recent-post-date">{{ articles.[0].date }}</p>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    <div role="listitem" class="sidebar-recent-post-item w-dyn-item">
+                        <article>
+                            <a href="/blog/{{ articles.[1].slug }}" class="sidebar-recent-post w-inline-block">
+                                <div class="image-block-resent-post">
+                                    <img 
+                                        src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ articles.[1].main_image }}"
+                                        loading="lazy" 
+                                        alt="{{ articles.[1].topic }}" 
+                                        class="sidebar-recent-post-image"
+                                    >
+                                </div>
+                                <div class="div-block">
+                                    <h6 class="blog-recent-post-title">{{ articles.[1].topic }}</h6>
+                                    <p class="blog-recent-post-date">{{ articles.[1].date }}</p>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div data-w-id="el_scroll_into_view" style="opacity:0" class="sidebar-categories">
+              <h4>Categories</h4>
+              <div class="sidebar-categories-wrapper w-dyn-list">
+                <div role="list" class="sidebar-categories-list w-dyn-items">
+                    {{#each categories}}
+                        <div role="listitem" class="sidebar-category-item w-dyn-item">
+                            <a href="/categories/{{ this }}" class="sidebar-category">{{ this }}</a>
+                        </div>
+                    {{/each}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

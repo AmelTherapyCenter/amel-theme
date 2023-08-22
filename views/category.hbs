@@ -1,0 +1,40 @@
+<div class="section-heading categories-blog wf-section">
+    <div class="base-container w-container">
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="banner-title-wrapper">
+        <h1 class="banner-title">{{ category }}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="section wf-section">
+    <div class="base-container w-container">
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="blog-grid-wrapper">
+        <div class="blog-grid-collection-list-wrapper w-dyn-list">
+          <div role="list" class="blog-grid-collection-list w-dyn-items">
+            {{#each articles}}
+                <div role="listitem" class="blog-grid-item w-dyn-item">
+                    <article class="blog-grid-post-wrapper">
+                        <a href="/categories/{{ this.categories.[0] }}" class="category-link-blog-post">{{ this.categories.[0] }}</a>
+                        <a href="/blog/{{ this.slug }}" class="blog-grid-image-link w-inline-block">
+                            <img
+                                src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ this.main_image }}"
+                                loading="lazy" 
+                                alt="{{ this.topic }}" 
+                                class="blog-grid-image"
+                            >
+                        </a>
+                        <div class="blog-grid-content-wrapper">
+                            <p class="blog-grid-item-date">{{ this.date }}</p>
+                            <a href="/blog/{{ this.slug }}" class="blog-grid-item-title w-inline-block">
+                                <h4 class="heading-blog">{{ this.topic }}</h4>
+                            </a>
+                            <p class="blog-grid-item-description">{{ this.description }}</p>
+                            <a href="#" class="link-underline">Read full post</a>
+                        </div>
+                    </article>
+                </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
