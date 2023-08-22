@@ -8,7 +8,7 @@ import { siteData, getMenu } from './settings_data.js';
 
 const app = express();
 const PORT = parseInt(process.env.PORT) || 8080;
-const { HOST } = process.env;
+const { HOST } = process.env; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
