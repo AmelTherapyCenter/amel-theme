@@ -312,6 +312,7 @@
   .base-container.services-container {
     flex-direction: row;
     align-items: flex-start;
+    position: relative;
   }
   
   .grid-system-wrapper {
@@ -4961,6 +4962,12 @@
     justify-content: center;
     display: flex;
   }
+
+  .banner-content-home-2.small-banner-content {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
   .circle-home-2 {
     width: 28px;
@@ -4975,10 +4982,20 @@
     margin-top: 0;
     margin-bottom: 30px;
   }
+
+  .heading-banner-home-2.small-header {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 48px;
+  }
   
   .paragraph-banner {
     color: #fff;
     font-size: 20px;
+  }
+
+  .paragraph-banner.small-p {
+    font-size: 18px;
   }
   
   .counter-banner-block {
@@ -4997,6 +5014,10 @@
     margin-bottom: 50px;
     display: flex;
   }
+
+  .button-block-banner-home-2.small-button-banner {
+    margin-top: 25px;
+  }
   
   .home-banner-section-home-2 {
     height: auto;
@@ -5007,6 +5028,15 @@
     background-size: auto, cover;
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+
+  .home-banner-section-home-2.small-banner {
+    max-height: 50vh;
+    min-height: 50vh;
+  }
+  
+  .banner-block-home-2.smaller-block {
+    min-height: 50vh;
   }
   
   .banner-block-home-2 {
@@ -5252,6 +5282,8 @@
   
   .div-block-5 {
     width: 30%;
+    position: sticky;
+    top: 0;
   }
   
   .div-block-6 {

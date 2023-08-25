@@ -1,20 +1,101 @@
-<div class="section services-details wf-section">
+{{!-- <div class="home-banner-section-home-2 small-banner" {{#if pageCMS.main_image}}style="background-image: url('https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{pageCMS.main_image}}');"{{/if}}>
+    <div class="base-container align-left w-container">
+      <div class="banner-block-home-2 smaller-block">
+        <div class="banner-content-home-2 small-banner-content">
+          <h1 data-w-id="el_scroll_into_view" style="opacity:0" class="heading-banner-home-2 small-header">The Best Tree Services In South Florida.</h1>
+          <div data-w-id="el_scroll_into_view" style="opacity:0" class="button-block-banner-home-2 small-button-banner">
+            <a href="tel:{{ site.phone_number }}" class="primary-button w-button">Click To Call Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> --}}
+  <div class="section services-details wf-section">
     <div class="background-image-block">
       <div class="banner-color"></div>
-      <img 
-        src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{pageCMS.main_image}}" 
-        loading="lazy" 
-        alt="{{ pageCMS.name }} main image" 
-        class="banner-image"
-    >
+      <img src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ pageCMS.main_image }}" loading="lazy" alt="{{ pageCMS.name }} main image" class="banner-image">
     </div>
     <div class="large-container w-container">
-      <div data-w-id="el_scroll_into_view" style="opacity:0" class="banner-slider-container">
+      <div data-w-id="el_scroll_into_view" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="banner-slider-container">
         <h1 class="heading-section-banner">{{ pageCMS.name }}</h1>
+        <div data-w-id="el_scroll_into_view" style="opacity:0" class="button-block-banner-home-2 small-button-banner">
+            <a href="tel:{{ site.phone_number }}" class="primary-button w-button">Click To Call Now</a>
+          </div>
       </div>
     </div>
   </div>
-  <div class="section wf-section">
+  <div class="section none-bottom-padding">
+    <div class="base-container w-container">
+      <div class="section-content">
+        <div class="section-title-right">
+          <h2 id="provide-assistance" data-w-id="el_scroll_into_view" style="opacity:0" class="heading-span margin-bottom-heading">We take care of friendly homeowners like you</h2>
+            <div data-w-id="el_scroll_into_view" style="opacity:0" class="paragraph-large">
+                {{ pageCMS.problem }}
+                <br><br>
+                We&#x27;re committed to giving you best tree care in South Florida: Hollywood, Davie, Sunrise, Southwest Ranches, and Plantation.
+            </div>
+          <a data-w-id="el_scroll_into_view" style="opacity:0" href="tel:{{ site.phone_number }}" class="primary-button margin-top-50px w-button">Call Us Now</a><img src="/images/Arrow_05-1.png" loading="lazy" alt="" class="image-arrow-absolute">
+        </div>
+        <div data-w-id="el_scroll_into_view" style="opacity:0" class="section-image-left"><img src="/images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000.jpeg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, 550px" srcset="/images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000-p-500.jpeg 500w, /images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000-p-800.jpeg 800w, /images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000-p-1080.jpeg 1080w, /images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000-p-1600.jpeg 1600w, /images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000.jpeg 2000w" alt="" class="image-section-left">
+          <div class="text-absolute">We Can Help You!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="base-container w-container">
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="process-item-wrapper">
+        <div class="process-image-wrapper"><img src="/images/Image-001.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 991px) 41vw, (max-width: 1279px) 39vw, 482px" srcset="/images/Image-001-p-500.jpg 500w, /images/Image-001.jpg 640w" alt="" class="process-image"></div>
+        <div class="process-number-wrapper">
+          <h2 class="process-number">01</h2>
+        </div>
+        <div class="process-content">
+          <h3>Expert Assessments</h3>
+          <p class="process-paragraph">{{ pageCMS.solution_one }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section none-padding">
+    <div class="base-container w-container">
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="process-item-wrapper reverse">
+        <div class="process-content-wrapper">
+          <div class="process-number-wrapper reverse">
+            <h2 class="process-number">02</h2>
+          </div>
+          <div class="process-content reverse">
+            <h3>Safe and Efficient</h3>
+            <p class="process-paragraph">{{ pageCMS.solution_two }}</p>
+          </div>
+        </div>
+        <div class="process-image-wrapper"><img src="/images/cart-03.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 1279px) 44vw, 526.5px" srcset="/images/cart-03-p-500.jpg 500w, /images/cart-03.jpg 640w" alt="" class="process-image"></div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="base-container w-container">
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="process-item-wrapper">
+        <div class="process-image-wrapper"><img src="/images/Gallery-Image-002.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 991px) 41vw, (max-width: 1279px) 39vw, 482px" srcset="/images/Gallery-Image-002-p-500.jpg 500w, /images/Gallery-Image-002.jpg 640w" alt="" class="process-image position"></div>
+        <div class="process-number-wrapper">
+          <h2 class="process-number">03</h2>
+        </div>
+        <div class="process-content">
+          <h3>Experience and Expertise</h3>
+          <p class="process-paragraph">{{ pageCMS.solution_three }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section green-background">
+    <div class="base-container w-container">
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="free-trial-wrapper">
+        <div class="subtitle-free-trial">Your trees need a bit of love?</div>
+        <h2 class="heading-free-trial">Contact Us Now!</h2>
+        <a href="tel:{{ site.phone_number }}" class="secondary-button">Click to Call Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="section wf-section none-bottom-padding">
     <div class="base-container services-container w-container">
       <div data-w-id="el_scroll_into_view" style="opacity:0" class="service-details-content">
         <div class="service-details-content-wrapper">
@@ -29,28 +110,153 @@
           <p class="paragraph-3">We can help you with all of your tree service needs. We have years of expertise and affordable prices to better serve your family or business.</p>
           <a href="tel:{{ site.phone_number }}" class="secondary-button button-full">Click to call now</a>
         </div>
-        <h3 class="heading-3">Our Services</h3>
-        <a href="/pages/tree-trimming" class="link-2">Tree Trimming</a>
-        <a href="/pages/tree-removal" class="link-3">Tree Removal</a>
-        <a href="/cost-calculator" class="link-4">Cost Calculator</a>
+      </div>
+    </div>
+  </div>
+  <div class="section no-bottom-padding">
+    <div class="base-container w-container">
+      <h3 class="heading-span margin-bottom-heading">Featured In</h3>
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="w-layout-grid customers-grid">
+        <div id="w-node-_9797396b-b9df-0569-b74b-e891917d713f-c6d19f47" class="customer-wrapper"><img src="/images/Clients-5.png" loading="lazy" height="" alt="Company Logo" class="customer-image">
+          <div class="customer-title">Wave</div>
+        </div>
+        <div id="w-node-_9797396b-b9df-0569-b74b-e891917d7143-c6d19f47" class="customer-wrapper"><img src="/images/Clients-3.png" loading="lazy" alt="Company Logo" class="customer-image">
+          <div class="customer-title">iconic</div>
+        </div>
+        <div id="w-node-_9797396b-b9df-0569-b74b-e891917d7147-c6d19f47" class="customer-wrapper"><img src="/images/Clients-4.png" loading="lazy" alt="Company Logo" class="customer-image">
+          <div class="customer-title">21 star</div>
+        </div>
+        <div id="w-node-_9797396b-b9df-0569-b74b-e891917d714b-c6d19f47" class="customer-wrapper"><img src="/images/Clients-2.png" loading="lazy" alt="Company Logo" class="customer-image">
+          <div class="customer-title">alisa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section none-bottom-padding">
+    <div class="base-container w-container">
+      <div class="workflow-title-wrapper">
+        <h2 data-w-id="el_scroll_into_view" style="opacity:0" class="section-title">We take care of friendly homeowners like you, by saving you time, money and worry, driven by our motto <span class="heading-text-span color-green">“Love your neighbor as yourself”</span></h2>
+      </div>
+      <div class="workflow-wrapper">
+        <div class="process-image-wrapper"><img src="/images/Gallery-Image-002.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 1279px) 44vw, 526.5px" srcset="/images/Gallery-Image-002-p-500.jpg 500w, /images/Gallery-Image-002.jpg 640w" alt="" class="process-image position"></div>
+        <div class="workflow-content-wrapper">
+          <p data-w-id="el_scroll_into_view" style="opacity:0" class="workflow-quote">&quot;We are hard-working honest professionals who are lead by the desire to help our community. Save yourself time, money and worry with our professional services at a very good affordable price.&quot;<br></p>
+          <div data-w-id="el_scroll_into_view" style="opacity:0" class="workflow-profile-wrapper">
+            <div class="workflow-profile-photo-wrapper"><img src="/images/Screen-Shot-2023-08-25-at-2.31.26-PM.png" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 1279px) 80px, (max-width: 1439px) 6vw, 80px" srcset="/images/Screen-Shot-2023-08-25-at-2.31.26-PM-p-500.png 500w, /images/Screen-Shot-2023-08-25-at-2.31.26-PM.png 738w" alt="" class="workflow-profile-photo"></div>
+            <div class="workflow-profile-description">
+              <h5 class="heading-cart-team">Tanner Robinson</h5>
+              <p>Chief Arborist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="base-container w-container">
+      <div class="section-title-wrapper max-w-730px">
+        <h2 id="provide-assistance" data-w-id="el_scroll_into_view" style="opacity:0" class="heading-span">The Best Tree Services Company In South Florida.</h2>
+      </div>
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="w-layout-grid grid-content home-2">
+        <div id="w-node-_6d463556-deef-ba14-5696-5014c2e0860f-c6d19f47" class="content-block home-2">
+          <div class="image-block-content margin">
+            <div class="number-content-block">1</div>
+          </div>
+          <div class="title-subtitle-content">
+            <h4 class="heading-grid-content">Quality Service</h4>
+            <p class="paragraph">Our tree care and service is top notch! Give us a try.</p>
+          </div>
+        </div>
+        <div id="w-node-_6d463556-deef-ba14-5696-5014c2e08618-c6d19f47" class="content-block home-2">
+          <div class="image-block-content margin">
+            <div class="number-content-block">2</div>
+          </div>
+          <div class="title-subtitle-content">
+            <h4 class="heading-grid-content">Licensed and Insured</h4>
+            <p class="paragraph">We offer a business you can trust, giving you reassurance and ease of mind.</p>
+          </div>
+        </div>
+        <div id="w-node-_6d463556-deef-ba14-5696-5014c2e08621-c6d19f47" class="content-block home-2">
+          <div class="image-block-content margin">
+            <div class="number-content-block">3</div>
+          </div>
+          <div class="title-subtitle-content">
+            <h4 class="heading-grid-content">Satisfied Customers</h4>
+            <p class="paragraph">We have  one of the best reputations in the tree services business.</p>
+          </div>
+        </div>
+        <div id="w-node-_6d463556-deef-ba14-5696-5014c2e0862a-c6d19f47" class="content-block home-2">
+          <div class="image-block-content margin">
+            <div class="number-content-block">4</div>
+          </div>
+          <div class="title-subtitle-content">
+            <h4 class="heading-grid-content">Responsiveness</h4>
+            <p class="paragraph">We attend your needs and follow up – always in a timely manner.</p>
+          </div>
+        </div>
+        <div id="w-node-_6d463556-deef-ba14-5696-5014c2e08633-c6d19f47" class="content-block home-2">
+          <div class="image-block-content margin">
+            <div class="number-content-block">5</div>
+          </div>
+          <div class="title-subtitle-content">
+            <h4 class="heading-grid-content">Trusted</h4>
+            <p class="paragraph">A community pillar, we are a trusted name in the industry.</p>
+          </div>
+        </div>
+        <div id="w-node-_6d463556-deef-ba14-5696-5014c2e0863c-c6d19f47" class="content-block home-2">
+          <div class="image-block-content margin">
+            <div class="number-content-block">6</div>
+          </div>
+          <div class="title-subtitle-content">
+            <h4 class="heading-grid-content">Experience</h4>
+            <p class="paragraph">Countless years of experience gives us an understanding like no other.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="section none-padding">
-    <div class="base-container w-container">
-      <div class="section-content">
-        <div class="section-title-right">
-          <h2 id="provide-assistance" data-w-id="el_scroll_into_view" style="opacity:0" class="heading-span margin-bottom-heading">Tree Removal and Trimming in Hollywood, Florida.</h2>
-          <div data-w-id="el_scroll_into_view" style="opacity:0" class="paragraph-large">We offer tree removal &amp; trimming services in South Florida. We are all licensed &amp; insured with a great personable crew that has an unmatched work ethic. We provide will be high quality tree service whether it&#x27;s taking down difficult 100 ft trees, emergency tree removal at rapid pace, tree cutting over power lines, and much more. <br><br>We&#x27;re committed to giving you best tree care in South Florida: Hollywood, Davie, Sunrise, Southwest Ranches, and Plantation.</div>
-          <a data-w-id="el_scroll_into_view" style="opacity:0" href="tel:{{ site.phone_number }}" class="primary-button margin-top-50px w-button">Call Us Now</a><img src="/images/Arrow_05-1.png" loading="lazy" alt="" class="image-arrow-absolute">
-        </div>
-        <div data-w-id="el_scroll_into_view" style="opacity:0" class="section-image-left"><img src="/images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000.jpeg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 45vw, 550px" srcset="/images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000-p-500.jpeg 500w, /images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000-p-800.jpeg 800w, /images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000-p-1080.jpeg 1080w, /images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000-p-1600.jpeg 1600w, /images/6434d4d60ef5844aaf110a02_63af742f8f22089e6de21e38_laron-rosser-Dn_KGNk2IoY-unsplash-p-2000.jpeg 2000w" alt="" class="image-section-left">
-          <div class="text-absolute">We Can Help You!</div>
+    <div data-w-id="el_scroll_into_view" style="opacity:0" class="large-container display-flex w-container">
+      <div class="background-slider"></div>
+      <div class="slider-block-content">
+        <div data-delay="4000" data-animation="slide" class="slider-block w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="4" data-duration="500" data-infinite="true">
+          <div class="mask-slider w-slider-mask">
+            <div data-w-id="el_scroll_into_view" class="slide-02 w-slide">
+              <div class="slide-content-wrapper">
+                <div class="image-slider"><img src="/images/dakota-lim-n_2DimPwbEk-unsplash-1.jpg" loading="lazy" width="532" sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 37vw, 438.9765625px" srcset="/images/dakota-lim-n_2DimPwbEk-unsplash-1-p-500.jpg 500w, /images/dakota-lim-n_2DimPwbEk-unsplash-1-p-800.jpg 800w, /images/dakota-lim-n_2DimPwbEk-unsplash-1.jpg 900w" alt="" class="image-absolute"></div>
+                <div class="slide-content-block">
+                  <h2 class="heading-slide">&quot;They&#x27;re hard-working honest professionals.&quot;</h2>
+                  <div class="testimonial-customer"><strong>Tom Triffer</strong> - Valued customer</div>
+                  <a href="tel:{{ site.phone_number }}" class="link-underline white-color">Call Now</a>
+                </div>
+              </div>
+            </div>
+            <div data-w-id="el_scroll_into_view" class="slide-03 w-slide">
+              <div class="slide-content-wrapper">
+                <div class="image-slider"><img src="/images/shaun-montero-ZxDX8D9HHNM-unsplash-1.jpg" loading="lazy" width="532" sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1279px) 37vw, 438.9765625px" srcset="/images/shaun-montero-ZxDX8D9HHNM-unsplash-1-p-500.jpg 500w, /images/shaun-montero-ZxDX8D9HHNM-unsplash-1-p-800.jpg 800w, /images/shaun-montero-ZxDX8D9HHNM-unsplash-1.jpg 900w" alt="" class="image-absolute"></div>
+                <div class="slide-content-block">
+                  <h2 class="heading-slide">&quot;Great and friendly service at a very good price.&quot;</h2>
+                  <div class="testimonial-customer"><strong>Julia Rowler</strong> - Valued customer</div>
+                  <a href="tel:{{ site.phone_number }}" class="link-underline white-color">Call Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="banner-left-arrow w-slider-arrow-left">
+            <div class="left-arrow-slider"></div>
+          </div>
+          <div class="banner-right-arrow w-slider-arrow-right">
+            <div class="right-arrow-slider"></div>
+          </div>
+          <div class="slider-nav-active-wrapper slider-garden">
+            <div class="slider-nav-active-item slider-home"></div>
+          </div>
+          <div class="slide-nav-block w-slider-nav w-round"></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="section wf-section">
+  <div class="section">
     <div class="base-container w-container">
       <div data-w-id="el_scroll_into_view" class="free-trial-wrapper">
         <h2 id="provide-assistance" class="heading-span margin-bottom">Your Trees Need a Bit of Love? <span class="heading-text-span color-green">We can help!</span></h2>
@@ -58,4 +264,3 @@
       </div>
     </div>
   </div>
-</div>

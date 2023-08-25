@@ -156,6 +156,21 @@ router.get("/pages/:page", async (req, res, next) => {
     }
 });
 
+router.get("/pages", async (req, res, next) => {
+    const result = await fetch(`${ADMIN_API_HOST}/api/site/pages/${SITE_MONGO_ID}/pages`, {
+        method: "GET",
+    });
+    const data = await result.json();
+
+    res.render("all-pages", {
+        pagesCMS: data,
+        page: {
+            title: "Our Pages",
+            description: "View each of our pages dedicated to tree care in South Florida! Trust us to deliver top-notch tree care throughout South Florida, including Davie, Sunrise, Southwest Ranches, and Plantation. Get ready for a friendly and reliable service that will leave your trees looking their best!"
+        }
+    })
+});
+
 router.get("/", async (req, res, next) => {
     const result = await fetch(`${ADMIN_API_HOST}/api/site/articles/${SITE_MONGO_ID}/articles`, {
         method: "GET",
