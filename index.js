@@ -57,6 +57,15 @@ app.engine("hbs", engine({
 //     next()
 //   })
 
+app.get('/robots.txt', function (req, res) {
+    res.type('text/plain');
+    res.send("User-agent: *\nDisallow: /\nSitemap: /sitemap.xml");
+});
+
+app.get('/sitemap.xml', function(req, res) {
+	res.sendFile(`${__dirname}/views/sitemap.xml`);
+});
+
 // Routes
 app.use("/", indexRouter);
 
