@@ -1,3 +1,17 @@
+<style>
+  .article-categories {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .article-categories a {
+    display: block;
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+</style>
+
 <div data-w-id="el_scroll_into_view" class="section blog-banner wf-section">
     <img 
         src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ article.main_image }}" 
@@ -5,14 +19,18 @@
         alt="{{ article.topic}}" 
         class="blog-template-image"
     >
-    <div class="div-block-3">{{ article.topic }}</div>
+    <div class="div-block-3"></div>
 </div>
   <div class="section blog-details-spacing wf-section">
     <div class="div-block-4">
       <div class="base-container w-container">
         <div data-w-id="el_scroll_into_view" style="opacity:0" class="blog-template-wrapper">
           <div class="centered-block">
-            <a href="/categories/{{ article.categories.[0] }}" class="blog-sidebar-post-category">{{ article.categories.[0] }}</a>
+            <div class="article-categories">
+              {{#each article.categories}}
+                <a href="/categories/{{ this }}" class="blog-sidebar-post-category">{{ this }}</a>
+              {{/each}}
+            </div>
             <h1 class="heading-blog-post-details">{{ article.topic }}</h1>
             <p class="blog-template-date">{{ article.date }}</p>
           </div>
