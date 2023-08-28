@@ -17,6 +17,16 @@
   .breadcrumbs a:hover {
     opacity: 0.6;
   }
+
+  .visually-hidden {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .breadcrumbs {
+      display: none;
+    }
+  }
 </style>
 
 
@@ -42,6 +52,7 @@
       <a href="/pages/{{ pageCMS.slug }}">{{ pageCMS.name }}</a>
     </div>
   </div>
+  <div class="visually-hidden" style="text-transform: capitalize;">{{ pageCMS.service }} in {{ pageCMS.location }}, FL</div>
   <div class="section none-bottom-padding">
     <div class="base-container w-container">
       <div class="section-content">
@@ -158,7 +169,7 @@
       <div class="workflow-wrapper">
         <div class="process-image-wrapper"><img src="/images/Gallery-Image-002.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 1279px) 44vw, 526.5px" srcset="/images/Gallery-Image-002-p-500.jpg 500w, /images/Gallery-Image-002.jpg 640w" alt="tree services" class="process-image position"></div>
         <div class="workflow-content-wrapper">
-          <p data-w-id="el_scroll_into_view" style="opacity:0" class="workflow-quote">&quot;We are hard-working honest professionals who are lead by the desire to help our community. Save yourself time, money and worry with our professional {{ pageCMS.service }} services at a very good affordable price.&quot;<br></p>
+          <p data-w-id="el_scroll_into_view" style="opacity:0" class="workflow-quote">&quot;We are hard-working honest professionals who are lead by the desire to help our {{ pageCMS.location }} community. Save yourself time, money and worry with our professional {{ pageCMS.service }} services at a very good affordable price.&quot;<br></p>
           <div data-w-id="el_scroll_into_view" style="opacity:0" class="workflow-profile-wrapper">
             <div class="workflow-profile-photo-wrapper">
               <img 
@@ -188,7 +199,7 @@
           </div>
           <div class="title-subtitle-content">
             <h4 class="heading-grid-content">Quality Service</h4>
-            <p class="paragraph">Our tree care and service is top notch! Give us a try.</p>
+            <p class="paragraph">Our tree care and {{ pageCMS.service }} services are top notch! Give us a try.</p>
           </div>
         </div>
         <div id="w-node-_6d463556-deef-ba14-5696-5014c2e08618-c6d19f47" class="content-block home-2">
