@@ -3917,6 +3917,10 @@
   .heading-section-banner {
     color: #fff;
   }
+
+  #pages-hero .heading-section-banner {
+    font-size: 48px;
+  }
   
   .cart-01 {
     width: 47%;
@@ -8357,7 +8361,8 @@
       grid-template-columns: 1fr;
     }
   
-    .heading-section-banner {
+    .heading-section-banner,
+    #pages-hero .heading-section-banner {
       font-size: 32px;
     }
   
