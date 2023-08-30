@@ -8,7 +8,7 @@ import { siteData, getMenu } from './settings_data.js';
 
 const app = express();
 const PORT = parseInt(process.env.PORT) || 8080;
-const { HOST } = process.env; 
+const { HOST, NODE_ENV } = process.env; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -21,12 +21,7 @@ app.locals.menus = {
 	footer_menu_two: await getMenu("services"),
 	footer_menu_three: await getMenu("contact")
 };
-// app.locals.menus = {
-// 	main_menu,
-// 	footer_menu_one,
-// 	footer_menu_two,
-// 	footer_menu_three
-// };
+app.locals.dev_envrionment = NODE_ENV === 'development' ? true : false;
 
 // Theme layout
 app.use(express.static("assets"))
@@ -59,7 +54,7 @@ app.engine("hbs", engine({
 
 app.get('/robots.txt', function (req, res) {
     res.type('text/plain');
-    res.send("User-agent: *\nAllow: /\nCrawl-delay: 5\nSitemap: https://browardtreetechs.com/sitemap.xml");
+    res.send("User-agent: *\nAllow: /\nCrawl-delay: 2\nSitemap: https://browardtreetechs.com/sitemap.xml");
 });
 
 app.get('/sitemap.xml', function(req, res) {
@@ -72,7 +67,13 @@ app.use("/", indexRouter);
 // Error handling
 app.use((req, res, next) => {
 	res.status(404);
-	res.render('404', { dark_bg: true });
+	res.render('404', { 
+		dark_bg: true,
+		page: {
+			title: "Page Not Found",
+			description: "We're sorry but this page could not be found",
+		}
+	});
 });
 
 app.use((err, req, res, next) => {

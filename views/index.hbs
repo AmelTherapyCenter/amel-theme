@@ -351,7 +351,7 @@
           <div role="list" class="home-blog-collection-list w-dyn-items">
             {{#each articles}}
             <div role="listitem" class="home-blog-collection-item w-dyn-item">
-              <a href="/blog/{{ this._id }}" class="home-blog-image-link w-inline-block">
+              <a href="/blog/{{ this.slug }}" class="home-blog-image-link w-inline-block">
                 <img src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ this.main_image }}" loading="lazy" alt="{{ this.topic }}" class="home-blog-image">
               </a>
               <div class="home-blog-content-wrapper">
@@ -360,7 +360,7 @@
                   <div class="text-in">in</div>
                   <a href="/categories/{{ this.categories.[0] }}" class="categories-link">{{ this.categories.[0] }}</a>
                 </div>
-                <a href="/blog/{{ this._id }}" class="link-block-heading w-inline-block">
+                <a href="/blog/{{ this.slug }}" class="link-block-heading w-inline-block">
                   <h4 class="blog-post-title">{{ this.topic }}</h4>
                 </a>
                 <p class="paragraph-large">{{ this.description }}</p>

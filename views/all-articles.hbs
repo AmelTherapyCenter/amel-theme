@@ -24,7 +24,8 @@
                                 >
                             </a>
                             <div class="blog-sidebar-post-content">
-                                <a href="{{ this.slug }}" class="w-inline-block">
+                                <p class="blog-grid-item-date">{{ this.date }}</p>
+                                <a href="/blog/{{ this.slug }}" class="w-inline-block">
                                     <h4 class="blog-post-title">{{ this.topic }}</h4>
                                 </a>
                                 <p class="paragraph-2">{{ this.description }}</p>
@@ -41,6 +42,7 @@
               <h4>Recent Posts</h4>
               <div class="sidebar-recent-posts-wrapper w-dyn-list">
                 <div role="list" class="w-dyn-items">
+                  {{#if articles.[0]}}
                     <div role="listitem" class="sidebar-recent-post-item w-dyn-item">
                         <article>
                             <a href="/blog/{{ articles.[0].slug }}" class="sidebar-recent-post w-inline-block">
@@ -59,6 +61,8 @@
                             </a>
                         </article>
                     </div>
+                    {{/if}}
+                    {{#if articles.[1]}}
                     <div role="listitem" class="sidebar-recent-post-item w-dyn-item">
                         <article>
                             <a href="/blog/{{ articles.[1].slug }}" class="sidebar-recent-post w-inline-block">
@@ -77,13 +81,14 @@
                             </a>
                         </article>
                     </div>
+                    {{/if}}
                 </div>
               </div>
             </div>
             <div data-w-id="el_scroll_into_view" style="opacity:0" class="sidebar-categories">
               <h4>Categories</h4>
               <div class="sidebar-categories-wrapper w-dyn-list">
-                <div role="list" class="sidebar-categories-list w-dyn-items">
+                <div role="list" class="sidebar-categories-list w-dyn-items" style="flex-wrap: wrap;">
                     {{#each categories}}
                         <div role="listitem" class="sidebar-category-item w-dyn-item">
                             <a href="/categories/{{ this }}" class="sidebar-category">{{ this }}</a>
