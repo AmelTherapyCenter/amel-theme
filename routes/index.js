@@ -48,28 +48,33 @@ router.get("/frequently-asked-questions", (req, res, next) => {
 });
 
 router.get("/categories/:category", async (req, res, next) => {
-    const { category } = req.params;
+    const category = req.params.category.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
     const result = await fetch(`${ADMIN_API_HOST}/api/site/categories/${SITE_MONGO_ID}/${category}`, {
         method: "GET",
     });
     const data = await result.json();
 
-    const changeDates = data.map(article => {
-        let timestamp = article.updatedAt ? article.updatedAt : article.createdAt;
-        timestamp = new Date(timestamp)
-        article.date = `${findMonth(timestamp.getMonth())} ${timestamp.getDate()}, ${timestamp.getFullYear()}`;
-        return article;
-    })
-    const articles = changeDates.filter(article => article.published);
+    if (!data || !data.length) {
+        res.status(404);
+        res.render('404', { dark_bg: true });
+    } else {
+        const changeDates = data.map(article => {
+            let timestamp = article.updatedAt ? article.updatedAt : article.createdAt;
+            timestamp = new Date(timestamp)
+            article.date = `${findMonth(timestamp.getMonth())} ${timestamp.getDate()}, ${timestamp.getFullYear()}`;
+            return article;
+        })
+        const articles = changeDates.filter(article => article.published);
 
-    res.render("category", {
-        category,
-        articles,
-        page: {
-            title: `Our Blog - ${category}`,
-            description: `View our ${category} blog category and all things tree care in South Florida! Our goal is to provide you with valuable information, guidance, and inspiration to help you nurture and maintain the beauty of your trees. Join us on this as we explore topics that resonate with tree care in South Florida and beyond.`
-        }
-    })
+        res.render("category", {
+            category,
+            articles,
+            page: {
+                title: `Our Blog - ${category}`,
+                description: `View our ${category} blog category and all things tree care in South Florida! Our goal is to provide you with valuable information, guidance, and inspiration to help you nurture and maintain the beauty of your trees. Join us on this as we explore topics that resonate with tree care in South Florida and beyond.`
+            }
+        })
+    }
 });
 
 router.get("/blog", async (req, res, next) => {
@@ -77,30 +82,36 @@ router.get("/blog", async (req, res, next) => {
         method: "GET",
     });
     const data = await result.json();
-    const changeDates = data.map(article => {
-        let timestamp = article.updatedAt ? article.updatedAt : article.createdAt;
-        timestamp = new Date(timestamp)
-        article.date = `${findMonth(timestamp.getMonth())} ${timestamp.getDate()}, ${timestamp.getFullYear()}`;
-        return article;
-    })
 
-    let categories = [];
-    const articles = changeDates.filter(article => {
-        if (article.published) {
-            categories = categories.concat(article.categories)
+    if (!data || !data.length) {
+        res.status(404);
+        res.render('404', { dark_bg: true });
+    } else {
+        const changeDates = data.map(article => {
+            let timestamp = article.updatedAt ? article.updatedAt : article.createdAt;
+            timestamp = new Date(timestamp)
+            article.date = `${findMonth(timestamp.getMonth())} ${timestamp.getDate()}, ${timestamp.getFullYear()}`;
             return article;
-        }
-    });
-    categories = categories.filter((cat, i) => categories.indexOf(cat) === i);
+        })
 
-    res.render("all-articles", {
-        categories,
-        articles,
-        page: {
-            title: "Our Blog",
-            description: "Welcome to our blog dedicated to all things tree care in South Florida! Here, we share insightful articles, expert tips, and engaging stories about tree removal, trimming, and everything in between. Our goal is to provide you with valuable information, guidance, and inspiration to help you nurture and maintain the beauty of your trees. Join us on this as we explore topics that resonate with tree care in South Florida and beyond."
-        }
-    })
+        let categories = [];
+        const articles = changeDates.filter(article => {
+            if (article.published) {
+                categories = categories.concat(article.categories)
+                return article;
+            }
+        });
+        categories = categories.filter((cat, i) => categories.indexOf(cat) === i);
+
+        res.render("all-articles", {
+            categories,
+            articles,
+            page: {
+                title: "Our Blog",
+                description: "Welcome to our blog dedicated to all things tree care in South Florida! Here, we share insightful articles, expert tips, and engaging stories about tree removal, trimming, and everything in between. Our goal is to provide you with valuable information, guidance, and inspiration to help you nurture and maintain the beauty of your trees. Join us on this as we explore topics that resonate with tree care in South Florida and beyond."
+            }
+        })
+    }
 });
 
 router.get("/blog/:blogId", async (req, res, next) => {
@@ -116,22 +127,27 @@ router.get("/blog/:blogId", async (req, res, next) => {
     const articles = await articlesRes.json();
     const i = articles.findIndex(article => JSON.stringify(article) === JSON.stringify(data));
 
-    let timestamp = data.updatedAt ? data.updatedAt : data.createdAt;
-    timestamp = new Date(timestamp)
-    data.date = `${findMonth(timestamp.getMonth())} ${timestamp.getDate()}, ${timestamp.getFullYear()}`;
+    if (!data) {
+        res.status(404);
+        res.render('404', { dark_bg: true });
+    } else {
+        let timestamp = data.updatedAt ? data.updatedAt : data.createdAt;
+        timestamp = new Date(timestamp)
+        data.date = `${findMonth(timestamp.getMonth())} ${timestamp.getDate()}, ${timestamp.getFullYear()}`;
 
-    const prevIndex = i - 1 < 0 ? 0 : i - 1;
-    const nextIndex = i + 1 > articles.length - 1 ? articles.length - 1 : i + 1;
+        const prevIndex = i - 1 < 0 ? 0 : i - 1;
+        const nextIndex = i + 1 > articles.length - 1 ? articles.length - 1 : i + 1;
 
-    res.render("article", {
-        prevArticle: articles[prevIndex],
-        nextArticle: articles[nextIndex],
-        article: data,
-        page: {
-            title: "Our Blog",
-            description: "Welcome to our blog dedicated to all things tree care in South Florida! Here, we share insightful articles, expert tips, and engaging stories about tree removal, trimming, and everything in between. Our goal is to provide you with valuable information, guidance, and inspiration to help you nurture and maintain the beauty of your trees. Join us on this as we explore topics that resonate with tree care in South Florida and beyond."
-        }
-    })
+        res.render("article", {
+            prevArticle: articles[prevIndex],
+            nextArticle: articles[nextIndex],
+            article: data,
+            page: {
+                title: "Our Blog",
+                description: "Welcome to our blog dedicated to all things tree care in South Florida! Here, we share insightful articles, expert tips, and engaging stories about tree removal, trimming, and everything in between. Our goal is to provide you with valuable information, guidance, and inspiration to help you nurture and maintain the beauty of your trees. Join us on this as we explore topics that resonate with tree care in South Florida and beyond."
+            }
+        });
+    }
 });
 
 router.get("/pages/:page", async (req, res, next) => {
@@ -142,14 +158,19 @@ router.get("/pages/:page", async (req, res, next) => {
             method: "GET",
         });
         const data = await result.json();
-        
-        res.render("page", {
-            pageCMS: data,
-            page: {
-                title: data.name,
-                description: data.description
-            }
-        })
+
+        if (!data) {
+            res.status(404);
+            res.render('404', { dark_bg: true });
+        } else {
+            res.render("page", {
+                pageCMS: data,
+                page: {
+                    title: data.name,
+                    description: data.description
+                }
+            })
+        }
     } catch (err) {
         console.error("Error: ", err)
         res.status(400).send(err);
@@ -162,13 +183,18 @@ router.get("/pages", async (req, res, next) => {
     });
     const data = await result.json();
 
-    res.render("all-pages", {
-        pagesCMS: data,
-        page: {
-            title: "Our Pages",
-            description: "View each of our pages dedicated to tree care in South Florida! Trust us to deliver top-notch tree care throughout South Florida, including Davie, Sunrise, Southwest Ranches, and Plantation. Get ready for a friendly and reliable service that will leave your trees looking their best!"
-        }
-    })
+    if (!data || !data.length) {
+        res.status(404);
+        res.render('404', { dark_bg: true });
+    } else {
+        res.render("all-pages", {
+            pagesCMS: data,
+            page: {
+                title: "Our Pages",
+                description: "View each of our pages dedicated to tree care in South Florida! Trust us to deliver top-notch tree care throughout South Florida, including Davie, Sunrise, Southwest Ranches, and Plantation. Get ready for a friendly and reliable service that will leave your trees looking their best!"
+            }
+        })
+    }
 });
 
 router.get("/", async (req, res, next) => {
@@ -211,13 +237,18 @@ router.get("/services/:service", async (req, res, next) => {
         });
         const data = await result.json();
         
-        res.render("service", {
-            service: data,
-            page: {
-                title: data.name,
-                description: data.description
-            }
-        })
+        if (!data) {
+            res.status(404);
+            res.render('404', { dark_bg: true });
+        } else {
+            res.render("service", {
+                service: data,
+                page: {
+                    title: data.name,
+                    description: data.description
+                }
+            })
+        }
     } catch (err) {
         console.error("Error: ", err)
         res.status(400).send(err);
