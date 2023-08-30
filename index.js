@@ -59,7 +59,7 @@ app.engine("hbs", engine({
 
 app.get('/robots.txt', function (req, res) {
     res.type('text/plain');
-    res.send("User-agent: *\nAllow: /\nSitemap: https://browardtreetechs.com/sitemap.xml");
+    res.send("User-agent: *\nAllow: /\nCrawl-delay: 2\nSitemap: https://browardtreetechs.com/sitemap.xml");
 });
 
 app.get('/sitemap.xml', function(req, res) {
