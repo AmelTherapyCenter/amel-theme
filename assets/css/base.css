@@ -1,10 +1,14 @@
 .home-banner__section {
     height: auto;
     min-height: 100vh;
+    /* background-image: linear-gradient(
+        rgba(0,0,0,.4),
+        rgba(0,0,0,.4)
+    ), url('/images/Main-Banner-home-1.jpg'); */
     background-image: linear-gradient(
         rgba(0,0,0,.4),
         rgba(0,0,0,.4)
-    ), url('/images/Main-Banner-home-1.jpg');
+    ), url('/images/tree-services-palm-beach.jpg');
     background-position: 0 0,50%;
     background-repeat: repeat,no-repeat;
     background-size: auto,cover;
