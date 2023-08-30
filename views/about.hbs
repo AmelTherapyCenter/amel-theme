@@ -77,23 +77,24 @@
       <div data-w-id="el_scroll_into_view" style="opacity:0" class="home-blog-wrapper margin">
         <div class="home-blog-collection-list-wrapper w-dyn-list">
           <div role="list" class="home-blog-collection-list w-dyn-items">
+            {{#each articles}}
             <div role="listitem" class="home-blog-collection-item w-dyn-item">
-              <a href="#" class="home-blog-image-link w-inline-block"><img src="" loading="lazy" alt="tree services" class="home-blog-image"></a>
+              <a href="/blog/{{ this.slug }}" class="home-blog-image-link w-inline-block">
+                <img src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ this.main_image }}" loading="lazy" alt="{{ this.topic }}" class="home-blog-image">
+              </a>
               <div class="home-blog-content-wrapper">
                 <div class="data-categories-blog-post">
-                  <div></div>
+                  <div>{{ this.date }}</div>
                   <div class="text-in">in</div>
-                  <a href="#" class="categories-link"></a>
+                  <a href="/categories/{{ this.categories.[0] }}" class="categories-link">{{ this.categories.[0] }}</a>
                 </div>
-                <a href="#" class="link-block-heading w-inline-block">
-                  <h4 class="blog-post-title"></h4>
+                <a href="/blog/{{ this.slug }}" class="link-block-heading w-inline-block">
+                  <h4 class="blog-post-title">{{ this.topic }}</h4>
                 </a>
-                <p class="paragraph-large"></p>
+                <p class="paragraph-large">{{ this.description }}</p>
               </div>
             </div>
-          </div>
-          <div class="w-dyn-empty">
-            <div>No items found.</div>
+            {{/each}}
           </div>
         </div>
       </div>

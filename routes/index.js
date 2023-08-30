@@ -37,8 +37,21 @@ router.get("/contact", (req, res, next) => {
     })
 });
 
-router.get("/about", (req, res, next) => {
+router.get("/about", async (req, res, next) => {
+    const result = await fetch(`${ADMIN_API_HOST}/api/site/articles/${SITE_MONGO_ID}/articles`, {
+        method: "GET",
+    });
+    const data = await result.json();
+    const changeDates = data.map(article => {
+        let timestamp = article.updatedAt ? article.updatedAt : article.createdAt;
+        timestamp = new Date(timestamp)
+        article.date = `${findMonth(timestamp.getMonth())} ${timestamp.getDate()}, ${timestamp.getFullYear()}`;
+        return article;
+    })
+    const articles = changeDates.filter(article => article.published);
+
     res.render("about", {
+        articles: [articles[0], articles[1]],
         page: {
             title: "About Us",
             description: "Our team is comprised of licensed and insured professionals who possess an exceptional work ethic and a friendly demeanor. As a local company based in Hollywood, we prioritize ethical practices and strive to provide you with the finest tree care available in South Florida, specifically in Hollywood, Davie, Sunrise, Southwest Ranches, and Plantation.",
