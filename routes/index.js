@@ -190,7 +190,10 @@ router.get("/blog/:blogId", async (req, res, next) => {
         const prevIndex = i - 1 < 0 ? 0 : i - 1;
         const nextIndex = i + 1 > articles.length - 1 ? articles.length - 1 : i + 1;
 
+        data.categories = data.categories.map((cat, i) => i === data.categories.length - 1 ? cat : `${cat},`);
+
         res.render("article", {
+            dark_bg: true,
             prevArticle: articles[prevIndex],
             nextArticle: articles[nextIndex],
             article: data,

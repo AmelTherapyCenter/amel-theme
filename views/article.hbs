@@ -2,17 +2,20 @@
   .article-categories {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
   }
 
   .article-categories a {
     display: block;
-    margin-right: 10px;
-    font-size: 12px;
+    margin: 0 10px 0 0;
+    font-size: 16px;
     font-weight: bold;
+    font-style: italic;
   }
 </style>
 
-<div data-w-id="el_scroll_into_view" class="section blog-banner wf-section">
+{{!-- <div data-w-id="el_scroll_into_view" class="section blog-banner wf-section">
     <img 
         src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ article.main_image }}" 
         loading="lazy" 
@@ -20,8 +23,8 @@
         class="blog-template-image"
     >
     <div class="div-block-3"></div>
-</div>
-  <div class="section blog-details-spacing wf-section">
+</div> --}}
+  <div class="section blog-details-spacing wf-section no-bottom-padding">
     <div class="div-block-4">
       <div class="base-container w-container">
         <div data-w-id="el_scroll_into_view" style="opacity:0" class="blog-template-wrapper">
@@ -58,6 +61,15 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="section green-background">
+    <div class="base-container w-container">
+      <div data-w-id="el_scroll_into_view" style="opacity:0" class="free-trial-wrapper">
+        <div class="subtitle-free-trial">Your trees need a bit of love?</div>
+        <h2 class="heading-free-trial">Contact Us Now!</h2>
+        <a href="tel:{{ site.phone_number }}" class="secondary-button">Get A Free Quote</a>
       </div>
     </div>
   </div>

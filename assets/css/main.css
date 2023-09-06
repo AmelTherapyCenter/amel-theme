@@ -251,7 +251,7 @@
   }
   
   .section.blog-details-spacing {
-    padding-top: 0;
+    padding-top: 300px;
     padding-bottom: 50px;
   }
   
@@ -986,13 +986,6 @@
   
   .blog-sidebar-post-category {
     color: #204e51;
-    background-color: #ffbe40;
-    border: 1px solid #ffbe40;
-    border-radius: 35px;
-    margin-bottom: 10px;
-    padding: 5px 8px;
-    transition: all .3s;
-    display: inline-block;
   }
   
   .blog-sidebar-post-category:hover {
@@ -4608,6 +4601,9 @@
   
   .heading-blog-post-details {
     font-size: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 35px;
+    text-align: center;
   }
   
   .heading-item {
@@ -5726,7 +5722,7 @@
     }
   
     .section.blog-details-spacing {
-      padding-top: 100px;
+      padding-top: 300px;
       padding-bottom: 100px;
     }
   
@@ -6283,7 +6279,7 @@
     }
   
     .section.blog-details-spacing {
-      padding-top: 40px;
+      padding-top: 250px;
       padding-bottom: 40px;
     }
   
