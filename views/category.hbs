@@ -14,22 +14,14 @@
                 {{#each articles}}
                     <div role="listitem" class="blog-sidebar-item w-dyn-item">
                         <article>
-                            <a href="/categories/{{ ../category }}" class="category-link-blog-post">{{ ../category }}</a>
-                            <a href="/blog/{{ this.slug }}" class="blog-sidebar-post-image-link w-inline-block">
-                                <img
-                                    src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ this.main_image }}"
-                                    loading="lazy" 
-                                    alt="{{ this.topic }}" 
-                                    class="blog-sidebar-post-image"
-                                >
-                            </a>
-                            <div class="blog-sidebar-post-content">
+                            <a href="/blog/{{ this.slug }}"class="blog-sidebar-post-content">
                                 <p class="blog-grid-item-date">{{ this.date }}</p>
-                                <a href="/blog/{{ this.slug }}" class="w-inline-block">
+                                <span class="w-inline-block">
                                     <h4 class="blog-post-title">{{ this.topic }}</h4>
-                                </a>
+                                </span>
                                 <p class="paragraph-2">{{ this.description }}</p>
-                            </div>
+                            </a>
+                            <a href="/categories/{{ ../category }}" class="category-link-blog-post">{{ ../category }}</a>
                         </article>
                     </div>
                 {{/each}}
@@ -46,14 +38,6 @@
                     <div role="listitem" class="sidebar-recent-post-item w-dyn-item">
                         <article>
                             <a href="/blog/{{ articles.[0].slug }}" class="sidebar-recent-post w-inline-block">
-                                <div class="image-block-resent-post">
-                                    <img 
-                                        src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ articles.[0].main_image }}"
-                                        loading="lazy" 
-                                        alt="{{ articles.[0].topic }}" 
-                                        class="sidebar-recent-post-image"
-                                    >
-                                </div>
                                 <div class="div-block">
                                     <h6 class="blog-recent-post-title">{{ articles.[0].topic }}</h6>
                                     <p class="blog-recent-post-date">{{ articles.[0].date }}</p>
@@ -65,18 +49,10 @@
                     {{#if articles.[1]}}
                     <div role="listitem" class="sidebar-recent-post-item w-dyn-item">
                         <article>
-                            <a href="/blog/{{ articles.[1].slug }}" class="sidebar-recent-post w-inline-block">
-                                <div class="image-block-resent-post">
-                                    <img 
-                                        src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/{{ articles.[1].main_image }}"
-                                        loading="lazy" 
-                                        alt="{{ articles.[1].topic }}" 
-                                        class="sidebar-recent-post-image"
-                                    >
-                                </div>
+                            <a href="/blog/{{ articles.[0].slug }}" class="sidebar-recent-post w-inline-block">
                                 <div class="div-block">
-                                    <h6 class="blog-recent-post-title">{{ articles.[1].topic }}</h6>
-                                    <p class="blog-recent-post-date">{{ articles.[1].date }}</p>
+                                    <h6 class="blog-recent-post-title">{{ articles.[0].topic }}</h6>
+                                    <p class="blog-recent-post-date">{{ articles.[0].date }}</p>
                                 </div>
                             </a>
                         </article>

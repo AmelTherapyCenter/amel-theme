@@ -48,7 +48,8 @@ router.get("/about", async (req, res, next) => {
         article.date = `${findMonth(timestamp.getMonth())} ${timestamp.getDate()}, ${timestamp.getFullYear()}`;
         return article;
     })
-    const articles = changeDates.filter(article => article.published);
+    let articles = changeDates.filter(article => article.published);
+    articles = articles.reverse();
 
     res.render("about", {
         articles: [articles[0], articles[1]],
@@ -106,7 +107,7 @@ router.get("/categories/:category", async (req, res, next) => {
         res.render("category", {
             category,
             categories,
-            articles,
+            articles: articles.reverse(),
             page: {
                 title: `Our Blog - ${category}`,
                 description: `View our ${category} blog category and all things tree care in South Florida! Our goal is to provide you with valuable information, guidance, and inspiration about ${category} to help you nurture and maintain the beauty of your trees. Join us on this as we explore ${category} in South Florida.`,
@@ -150,7 +151,7 @@ router.get("/blog", async (req, res, next) => {
 
         res.render("all-articles", {
             categories,
-            articles,
+            articles: articles.reverse(),
             page: {
                 title: "Our Blog",
                 description: "Welcome to our blog dedicated to all things tree care in South Florida! Here, we share insightful articles, expert tips, and engaging stories about tree removal, trimming, and everything in between. Our goal is to provide you with valuable information, guidance, and inspiration to help you nurture and maintain the beauty of your trees. Join us on this as we explore topics that resonate with tree care in South Florida and beyond.",
@@ -257,7 +258,7 @@ router.get("/pages", async (req, res, next) => {
             });
     } else {
         res.render("all-pages", {
-            pagesCMS: data,
+            pagesCMS: data.reverse(),
             page: {
                 title: "Our Pages",
                 description: "View each of our pages dedicated to tree care in South Florida! Trust us to deliver top-notch tree care throughout South Florida, including Davie, Sunrise, Southwest Ranches, and Plantation. Get ready for a friendly and reliable service that will leave your trees looking their best!",
@@ -278,7 +279,8 @@ router.get("/", async (req, res, next) => {
         article.date = `${findMonth(timestamp.getMonth())} ${timestamp.getDate()}, ${timestamp.getFullYear()}`;
         return article;
     })
-    const articles = changeDates.filter(article => article.published);
+    let articles = changeDates.filter(article => article.published);
+    articles = articles.reverse();
 
     res.render("index", {
         articles: [articles[0], articles[1]],
