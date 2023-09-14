@@ -191,7 +191,13 @@ router.get("/blog/:blogId", async (req, res, next) => {
         const prevIndex = i - 1 < 0 ? 0 : i - 1;
         const nextIndex = i + 1 > articles.length - 1 ? articles.length - 1 : i + 1;
 
-        data.categories = data.categories.map((cat, i) => i === data.categories.length - 1 ? cat : `${cat},`);
+        data.categories = data.categories.map((cat, i) => {
+            const category = {
+                text: i === data.categories.length - 1 ? cat : `${cat},`,
+                slug: cat //cat.replace(/\s+/g, '-').toLowerCase()
+            }
+            return category;
+        });
 
         res.render("article", {
             dark_bg: true,

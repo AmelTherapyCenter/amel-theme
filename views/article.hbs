@@ -31,7 +31,7 @@
           <div class="centered-block">
             <div class="article-categories">
               {{#each article.categories}}
-                <a href="/categories/{{ this }}" class="blog-sidebar-post-category">{{ this }}</a>
+                <a href="/categories/{{ this.slug }}" class="blog-sidebar-post-category">{{ this.text }}</a>
               {{/each}}
             </div>
             <h1 class="heading-blog-post-details">{{ article.topic }}</h1>
