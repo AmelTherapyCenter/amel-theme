@@ -3352,6 +3352,13 @@
   .rich-text-block h5, .rich-text-block h6 {
     margin-top: 20px;
   }
+
+  .rich-text-block a {
+    color: #cc9833;
+    align-items: center;
+    text-decoration: underline;
+    transition: color .3s;
+  }
   
   .home-banner-left-arrow {
     height: 40px;
