@@ -538,6 +538,7 @@
     line-height: 1em;
     transition: all .3s;
     display: inline-block;
+    text-decoration: none;
   }
   
   .primary-button:hover {
@@ -2058,6 +2059,7 @@
     padding-bottom: 15px;
     font-size: 18px;
     transition: all .3s;
+    text-decoration: none;
   }
   
   .footer-link:hover {
@@ -2886,6 +2888,7 @@
     line-height: 1em;
     transition: all .3s;
     display: block;
+    text-decoration: none;
   }
   
   .secondary-button:hover {
@@ -3494,6 +3497,7 @@
 
   .nav-menu-content a {
     line-height: 32px;
+    text-decoration: none;
   }
 
   .nav-menu-content a.primary-button {
