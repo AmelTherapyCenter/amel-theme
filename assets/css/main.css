@@ -4089,6 +4089,7 @@
     font-size: 18px;
     font-weight: 700;
     transition: border-color .3s, color .3s;
+    text-decoration: none;
   }
   
   .link-underline:hover {
