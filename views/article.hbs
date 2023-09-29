@@ -1,18 +1,8 @@
 <style>
-  .article-categories {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .article-categories a {
-    display: block;
-    margin: 0 10px 0 0;
-    font-size: 16px;
-    font-weight: bold;
-    font-style: italic;
-  }
+	.article-categories { display: flex; flex-wrap: wrap; width: 100%;
+	justify-content: center; } .article-categories a { display: block; margin: 0
+	10px 0 0; font-size: 16px; font-weight: bold; font-style: italic;
+	text-transform: capitalize; text-decoration: none; }
 </style>
 
 {{!-- <div data-w-id="el_scroll_into_view" class="section blog-banner wf-section">
@@ -24,52 +14,89 @@
     >
     <div class="div-block-3"></div>
 </div> --}}
-  <div class="section blog-details-spacing wf-section no-bottom-padding">
-    <div class="div-block-4">
-      <div class="base-container w-container">
-        <div data-w-id="el_scroll_into_view" style="opacity:0" class="blog-template-wrapper">
-          <div class="centered-block">
-            <div class="article-categories">
-              {{#each article.categories}}
-                <a href="/categories/{{ this.slug }}" class="blog-sidebar-post-category">{{ this.text }}</a>
-              {{/each}}
-            </div>
-            <h1 class="heading-blog-post-details">{{ article.topic }}</h1>
-            <p class="blog-template-date">{{ article.date }}</p>
-          </div>
-          <div class="rich-text-block blog-content w-richtext">
-            {{{ article.text }}}
-          </div>
-          <div class="blog-template-pagination">
-            <div class="blog-template-prev-button">
-              <a data-w-id="el_scroll_into_view" href="/blog/{{ prevArticle.slug }}" class="blog-template-pagination-link w-inline-block">
-                <p style="color:rgb(175,175,175);-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="prev-post-arrow"></p>
-                <div>
-                  <p>Previous post</p>
-                  <h6 style="color:rgb(96,96,96)" class="blog-details-link-title">{{ prevArticle.topic }}</h6>
-                </div>
-              </a>
-            </div><img src="/images/Blog-template-pagination-icon.webp" loading="lazy" alt="blog pagination" class="blog-template-pagination-icon">
-            <div class="blog-template-next-button">
-              <a data-w-id="el_scroll_into_view" href="/blog/{{ nextArticle.slug }}" class="blog-template-pagination-link w-inline-block">
-                <div class="blog-template-next">
-                  <p>Next post</p>
-                  <h6 style="color:rgb(96,96,96)" class="blog-details-link-title">{{ nextArticle.topic }}</h6>
-                </div>
-                <p style="color:rgb(175,175,175);-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="next-post-arrow"></p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section green-background">
-    <div class="base-container w-container">
-      <div data-w-id="el_scroll_into_view" style="opacity:0" class="free-trial-wrapper">
-        <div class="subtitle-free-trial">Your trees need a bit of love?</div>
-        <h2 class="heading-free-trial">Contact Us Now!</h2>
-        <a href="tel:{{ site.phone_number }}" class="secondary-button">Get A Free Quote</a>
-      </div>
-    </div>
-  </div>
+<div class='section blog-details-spacing wf-section no-bottom-padding'>
+	<div class='div-block-4'>
+		<div class='base-container w-container'>
+			<div
+				data-w-id='el_scroll_into_view'
+				style='opacity:0'
+				class='blog-template-wrapper'
+			>
+				<div class='centered-block'>
+					<div class='article-categories'>
+						{{#each article.categories}}
+							<a
+								href='/categories/{{this.slug}}'
+								class='blog-sidebar-post-category'
+							>{{this.text}}</a>
+						{{/each}}
+					</div>
+					<h1 class='heading-blog-post-details'>{{article.topic}}</h1>
+					<p class='blog-template-date'>{{article.date}}</p>
+				</div>
+				<div class='rich-text-block blog-content w-richtext'>
+					{{{article.text}}}
+				</div>
+				<div class='blog-template-pagination'>
+					<div class='blog-template-prev-button'>
+						<a
+							data-w-id='el_scroll_into_view'
+							href='/blog/{{prevArticle.slug}}'
+							class='blog-template-pagination-link w-inline-block'
+						>
+							<p
+								style='color:rgb(175,175,175);-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
+								class='prev-post-arrow'
+							></p>
+							<div>
+								<p>Previous post</p>
+								<h6
+									style='color:rgb(96,96,96)'
+									class='blog-details-link-title'
+								>{{prevArticle.topic}}</h6>
+							</div>
+						</a>
+					</div><img
+						src='/images/Blog-template-pagination-icon.webp'
+						loading='lazy'
+						alt='blog pagination'
+						class='blog-template-pagination-icon'
+					/>
+					<div class='blog-template-next-button'>
+						<a
+							data-w-id='el_scroll_into_view'
+							href='/blog/{{nextArticle.slug}}'
+							class='blog-template-pagination-link w-inline-block'
+						>
+							<div class='blog-template-next'>
+								<p>Next post</p>
+								<h6
+									style='color:rgb(96,96,96)'
+									class='blog-details-link-title'
+								>{{nextArticle.topic}}</h6>
+							</div>
+							<p
+								style='color:rgb(175,175,175);-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)'
+								class='next-post-arrow'
+							></p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class='section green-background'>
+	<div class='base-container w-container'>
+		<div
+			data-w-id='el_scroll_into_view'
+			style='opacity:0'
+			class='free-trial-wrapper'
+		>
+			<div class='subtitle-free-trial'>Your trees need a bit of love?</div>
+			<h2 class='heading-free-trial'>Contact Us Now!</h2>
+			<a href='tel:{{site.phone_number}}' class='secondary-button'>Get A
+				Free Quote</a>
+		</div>
+	</div>
+</div>
