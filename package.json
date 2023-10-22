@@ -1,34 +1,25 @@
 {
-  "name": "broward-tree-techs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "minify": "gulp minify-css minify-js",
-    "minify-css": "gulp minify-css",
-    "minify-js": "gulp minify-js",
-    "minify-html": "gulp minify-html"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "core-util-is": "^1.0.3",
-    "dotenv": "^16.1.4",
-    "express": "^4.18.2",
-    "express-handlebars": "^7.0.7",
-    "prettier": "^2.8.8"
-  },
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-cli": "^2.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-uglify": "^3.0.2",
-    "nodemon": "^2.0.22"
-  }
+	"name": "amel-theme",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon index.js",
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "npx tailwindcss -i tailwind-input.css -o assets/css/tailwind-output.css --watch"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"core-util-is": "^1.0.3",
+		"dotenv": "^16.1.4",
+		"express": "^4.18.2",
+		"express-handlebars": "^7.0.7",
+		"prettier": "^2.8.8"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.22"
+	}
 }

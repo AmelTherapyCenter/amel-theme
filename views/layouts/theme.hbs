@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-wf-page="64436db9e250ac7499ff38c2" data-wf-site="64436db9e250ac2b29ff3811" lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <meta property="og:type" content="website">
@@ -30,215 +30,127 @@
     <link rel="canonical" href="{{ page.canonUrl }}" />
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        WebFont.load({
-            google: {
-                families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","Oswald:200,300,400,500,600,700","Poppins:regular,600","Manrope:300,regular,500,700"]  
-            }
-        });
-    </script>
-    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-    
-    <link 
-      href="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691179674/{{ site.favicon }}" 
-      rel="shortcut icon" 
-      type="image/x-icon"
-      sizes="32x32"
-    >
-    {{!-- <link 
-      href="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691179674/{{ site.favicon }}" 
-      rel="apple-touch-icon"
-    > --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link href="/css/normalize.css" rel="stylesheet" type="text/css">
-    <link href="/css/webflow.css" rel="stylesheet" type="text/css">
-    <link href="/css/base.css" rel="stylesheet" type="text/css">
     <link href="/css/theme.css" rel="stylesheet" type="text/css">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVYMPPRC0D"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-NVYMPPRC0D');
-    </script>
+    <link href="/css/tailwind-output.css" rel="stylesheet" type="text/css">
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-  <div 
-    data-animation="over-left" 
-    data-collapse="medium" 
-    data-duration="400" 
-    data-easing="ease" 
-    data-easing2="ease" 
-    data-doc-height="1" 
-    role="banner" 
-    class="navbar-second navbar-home-2 w-nav{{#if dark_bg }} dark-bg{{/if}}"
-  >
-    <div class="base-container home-2 w-container">
-      <nav role="navigation" class="nav-menu-content w-nav-menu">
-        <div class="tablet-menu-logo">
-          <a href="/" aria-current="page" class="logo-tablet-link w-inline-block w--current">
-            <img 
-              src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691179674/{{ site.logo }}" 
-              loading="lazy" 
-              alt="{{ site.name }} logo" 
-              class="image-20"
-              width="175"
-              height="auto"
-            />
-          </a>
-          <div class="button-close w-nav-button">
-            <img 
-              src="/images/round_close_white_48dp.webp" 
-              loading="lazy" 
-              width="30" 
-              height="30" 
-              alt="close icon" 
-              class="image-close"
-            />
-          </div>
-        </div>
-
-        <a href="/" aria-current="page" class="logo-menu w-inline-block w--current">
-          <img 
-            src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1690085101/{{ site.logo }}"
-            loading="lazy" 
-            width="Auto" 
-            height="Auto" 
-            alt="{{ site.name }} logo" 
-            class="image-nav-logo"
-          />
-        </a>
-
-        <div class="navigation-link">
-          {{#each menus.main_menu.links }}
-            {{#if this.links}}
-              <div data-hover="true" data-delay="0" data-w-id="0fcf8eb7-f2f0-03a0-f67a-78e583b68d8c" class="nav-dropdown margin w-dropdown">
-                <div class="nav-dropdown-toggle-2 none-padding w-dropdown-toggle">
-                  <a href="{{ this.url }}" class="nav-item-title-2 dark-text">{{ this.title }}</a>
-                  <div class="arrow-bottom-drop dark-text"></div>
-                </div>
-                <nav class="nav-dropdown-list-second w-dropdown-list">
-                  <div class="megamenu-dropdown-wrapper justify">
-                    <div class="megamenu-dropdown-wrap-2">
-                      <div class="nav-dropdown-link-wrapper">
-                        {{#each this.links}}
-                          <a href="{{ this.url }}" class="nav-dropdown-link-2 home-2-white w-dropdown-link"><span class="nav-dropdowm-link-line-2"> </span>{{ this.title }}</a>
-                        {{/each}}
-                      </div>
+    <div class="py-6 px-16 w-full sticky top-0">
+        <div class="bg-dark-green py-6 xl:px-16 px-3 w-full mx-auto max-w-[{{ theme.page_width }}]">
+            <nav class="flex gap-6 justify-center items-center">
+                <div class="w-2/5 flex flex-col items-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="265" height="77" viewBox="0 0 265 77" fill="none">
+                    <path d="M51.323 74.5174C56.1998 69.3181 61.0086 64.078 65.971 58.9319C71.019 53.6954 76.2228 48.5493 81.3564 43.3641L79.9386 41.3515C74.9586 42.7985 69.0196 43.3109 65.1765 45.8663C53.7636 53.4577 41.3192 54.3036 28.291 50.5141C19.6809 48.0102 11.5997 44.2597 3.48999 40.7521C1.75612 39.9984 -0.151149 37.8066 0.000290835 36.4288C0.131978 35.3098 3.10591 33.8274 5.06365 33.5241C18.217 31.4848 31.3857 29.5413 44.6136 27.9258C53.9919 26.7767 61.9743 29.2594 69.1205 34.4622C72.2283 36.7267 76.9339 37.569 81.7449 38.1258C68.2404 30.334 60.945 19.751 57.4662 7.31661C56.8276 5.03261 57.8481 2.44715 58.1005 0C60.6377 0.89906 63.6314 1.37253 65.6352 2.76634C79.5435 12.4414 94.5163 21.3451 101.641 35.9411C102.488 37.6772 107.154 39.1029 110.086 39.1473C158.018 39.8566 205.956 40.3159 253.89 40.8993C257.589 40.9454 261.278 41.5217 264.972 41.8515C264.981 42.5715 264.99 43.292 265 44.0132C261.146 44.3146 257.286 44.9158 253.436 44.8732C206.687 44.359 159.938 43.8571 113.205 43.0503C106.368 42.9332 102.716 44.1018 100.128 49.7462C93.983 63.1843 81.3059 71.5915 64.4786 75.8438C61.0086 76.7216 57.1656 76.64 53.5047 77C52.7731 76.1725 52.0459 75.3449 51.323 74.5174ZM88.9087 46.854L86.4352 45.4602L62.2509 69.6444C77.0086 67.7274 86.3737 60.9552 91.6609 50.3438L81.1457 59.659L79.7301 58.595L88.9087 46.854ZM60.6509 40.7858H18.6098C32.8188 49.4607 50.8512 49.4395 60.6509 40.7858ZM66.6492 8.77781C69.4497 22.0279 74.6887 27.5552 84.1548 29.7913L75.0486 20.3929L76.7254 19.2119L89.96 29.0944L91.8102 27.3318L66.6492 8.77781ZM25.6441 36.1149H61.0152C49.0931 29.614 37.3555 32.4779 25.6441 36.1149Z" fill="#FBF3DD"/>
+                    </svg>
+                    <div class="flex w-full pr-6 pt-4 justify-around">
+                        <div class="w-1/2 group relative">
+                            <a 
+                                href="{{ menus.main_menu.0.handle }}" 
+                                class="w-full h-full flex flex-col items-center"
+                            >
+                                <div class="mx-auto w-28 group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.0.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
+                                <span class="hover:opacity-70 transition-all duration-300 text-center px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.0.title }}</span>
+                            </a>
+                            {{#if menus.main_menu.0.children }}
+                                <div class="w-full left-0 right-0 group-hover:flex flex-col items-center hidden absolute top-10 p-3 bg-dark-green">
+                                    {{#each menus.main_menu.0.children }}
+                                        <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl">
+                                            {{ this.title }}
+                                        </a>
+                                    {{/each}}
+                                </div>
+                            {{/if}}
+                        </div>
+                        <div class="w-1/2 group relative">
+                            <a 
+                                href="{{ menus.main_menu.1.handle }}" 
+                                class="w-full h-full flex flex-col items-center"
+                            >
+                                <div class="mx-auto w-28 group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.1.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
+                                <span class="hover:opacity-70 transition-all duration-300 px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.1.title }}</span>
+                            </a>
+                            {{#if menus.main_menu.1.children }}
+                                <div class="w-full left-0 right-0 group-hover:flex flex-col items-center hidden absolute top-10 p-3 bg-dark-green">
+                                    {{#each menus.main_menu.1.children }}
+                                        <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl">
+                                            {{ this.title }}
+                                        </a>
+                                    {{/each}}
+                                </div>
+                            {{/if}}
+                        </div>
                     </div>
-                  </div>
-                </nav>
-              </div>
-            {{else}}
-              <a href="{{ this.url }}" class="link navbar-link">{{ this.title }}</a>
-            {{/if}}
-          {{/each}}
+                </div>
+                <img 
+                    src="/logos/amel-logo.png" 
+                    alt="Amel therapy center logo" 
+                    class="w-32 h-auto" 
+                    width="auto" 
+                    height="auto" 
+                    loading="eager"
+                /> 
+                <div class="w-2/5 flex flex-col items-start">
+                    <svg width="265" height="77" viewBox="0 0 265 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M213.677 2.48261C208.8 7.68192 203.991 12.922 199.029 18.0681C193.981 23.3046 188.777 28.4507 183.644 33.6359L185.061 35.6485C190.041 34.2015 195.98 33.6891 199.824 31.1337C211.236 23.5423 223.681 22.6964 236.709 26.4859C245.319 28.9898 253.4 32.7403 261.51 36.2479C263.244 37.0016 265.151 39.1934 265 40.5712C264.868 41.6902 261.894 43.1726 259.936 43.4759C246.783 45.5152 233.614 47.4587 220.386 49.0742C211.008 50.2233 203.026 47.7406 195.879 42.5378C192.772 40.2733 188.066 39.431 183.255 38.8742C196.76 46.666 204.055 57.249 207.534 69.6834C208.172 71.9674 207.152 74.5529 206.899 77C204.362 76.1009 201.369 75.6275 199.365 74.2337C185.456 64.5586 170.484 55.6549 163.359 41.0589C162.512 39.3228 157.846 37.8971 154.914 37.8527C106.982 37.1434 59.0437 36.6841 11.1097 36.1007C7.41147 36.0546 3.72205 35.4783 0.0282288 35.1485C0.0194397 34.4285 0.00991821 33.708 -0.000305176 32.9868C3.85373 32.6854 7.71436 32.0842 11.564 32.1268C58.3128 32.641 105.062 33.1429 151.795 33.9497C158.632 34.0668 162.284 32.8982 164.872 27.2538C171.017 13.8157 183.694 5.40855 200.521 1.15619C203.991 0.278404 207.834 0.359978 211.495 0C212.227 0.827538 212.954 1.65508 213.677 2.48261ZM176.091 30.146L178.565 31.5398L202.749 7.35563C187.991 9.27256 178.626 16.0448 173.339 26.6562L183.854 17.341L185.27 18.405L176.091 30.146ZM204.349 36.2142L246.39 36.2142C232.181 27.5393 214.149 27.5605 204.349 36.2142ZM198.351 68.2222C195.55 54.9721 190.311 49.4448 180.845 47.2087L189.951 56.6071L188.275 57.7881L175.04 47.9056L173.19 49.6682L198.351 68.2222ZM239.356 40.8851L203.985 40.8851C215.907 47.386 227.645 44.5221 239.356 40.8851Z" fill="#FBF3DD"/>
+                    </svg>
+                    <div class="flex w-full pl-6 pt-3 justify-around">
+                        <div class="w-1/2 group relative">
+                            <a 
+                                href="{{ menus.main_menu.2.handle }}" 
+                                class="w-full h-full flex flex-col items-center"
+                            >
+                                <div class="mx-auto w-28 group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.2.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
+                                <span class="hover:opacity-70 transition-all duration-300 px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.2.title }}</span>
+                            </a>
+                            {{#if menus.main_menu.2.children }}
+                                <div class="w-full left-0 right-0 group-hover:flex flex-col items-center hidden absolute top-10 p-3 bg-dark-green">
+                                    {{#each menus.main_menu.2.children }}
+                                        <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl">
+                                            {{ this.title }}
+                                        </a>
+                                    {{/each}}
+                                </div>
+                            {{/if}}
+                        </div>
+                        <div class="w-1/2 group relative">
+                            <a 
+                                href="{{ menus.main_menu.3.handle }}" 
+                                class="w-full h-full flex flex-col items-center"
+                            >
+                                <div class="mx-auto w-28 group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.3.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
+                                <span class="hover:opacity-70 transition-all duration-300 px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.3.title }}</span>
+                            </a>
+                            {{#if menus.main_menu.3.children }}
+                                <div class="w-full left-0 right-0 group-hover:flex flex-col items-center hidden absolute top-10 p-3 bg-dark-green">
+                                    {{#each menus.main_menu.3.children }}
+                                        <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl">
+                                            {{ this.title }}
+                                        </a>
+                                    {{/each}}
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
-
-        <div class="button-block-nav">
-          <a href="tel:{{ site.phone_number }}" class="primary-button margin-left-28px navbar-cta w-button">Get A Free Quote</a>
-        </div>
-      </nav>
-
-      <a href="/" id="w-node-_0fcf8eb7-f2f0-03a0-f67a-78e583b68da7-83b68d7d" aria-current="page" class="link-logo w-inline-block w--current">
-        <img 
-          src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691179674/{{ site.logo }}"
-          loading="lazy" 
-          alt="{{ site.name }} Logo" 
-          class="image-nav-logo"
-        />
-      </a>
-
-      <div class="menu-button-2 invert-color w-nav-button">
-        <img src="/images/Burger-button.webp" loading="lazy" width="30" alt="tree services" class="image-18">
-      </div>
     </div>
-  </div>
 
   {{{ body }}}
 
-  <a href="tel:{{ site.phone_number }}" class="link-block-2 w-inline-block">
-    <img 
-      src="/images/64503a7708b85659341618cf_Phone-icon-big-white.png" 
-      loading="lazy" 
-      alt="phone icon" 
-      class="image-19"
-    />
-  </a>
-
-  <div class="footer">
-    <div class="base-container w-container">
-      <div class="footer-content">
-        <div class="footer-wrapper">
-          <div class="footer-brand-wrapper">
-            <div class="footer-logo-wrapper">
-              <a href="/" class="footer-brand w-nav-brand">
-                <img 
-                  src="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691179674/{{ site.logo }}" 
-                  loading="lazy" 
-                  height="30" 
-                  alt="{{ site.name }} logo on footer" 
-                  class="footer-logo"
-                />
-              </a>
-              <p class="footer-brand-description">We&#x27;re committed to giving you best tree services and care in South Florida: Hollywood, Davie, Sunrise, Southwest Ranches, and Plantation.</p>
-            </div>
-          </div>
-          <div class="div-block-7">
-            <div class="footer-links-wrapper">
-              <h5 class="white-text footer-head">{{ menus.footer_menu_one.title }}</h5>
-              {{#each menus.footer_menu_one.links }}
-                <a href="{{ this.url }}" aria-current="page" class="footer-link w--current">{{ this.title }}</a>
-              {{/each}}
-            </div>
-            <div class="footer-links-wrapper">
-              <h5 class="white-text footer-head">{{ menus.footer_menu_two.title }}</h5>
-              {{#each menus.footer_menu_two.links }}
-                <a href="{{ this.url }}" aria-current="page" class="footer-link w--current">{{ this.title }}</a>
-              {{/each}}
-            </div>
-            <div class="footer-links-wrapper">
-              <h5 class="white-text footer-head">{{ menus.footer_menu_three.title }}</h5>
-              {{#each menus.footer_menu_three.links }}
-                <a href="{{ this.url }}" aria-current="page" class="footer-link w--current">{{ this.title }}</a>
-              {{/each}}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-social-wrapper">
-        <div class="footer-social-icons-wrapper centered">
-          <a href="{{ site.facebook }}" target="_blank" class="footer-social-icon"></a>
-          <a href="{{ site.instagram }}" target="_blank" class="footer-social-icon"></a>
-          <a href="{{ site.twitter }}" target="_blank" class="footer-social-icon"></a>
-          <a href="{{ site.pinterest }}" target="_blank" class="footer-social-icon"></a>
-          <a href="{{ site.linkedin }}" target="_blank" class="footer-social-icon"></a>
-          <a href="{{ site.yelp }}" target="_blank" class="footer-social-icon"></a>
-        </div>
-        <div class="block-link-adress">
-          <div class="text-footer">{{ site.address }}</div>
-          <a href="tel:{{ site.phone_number }}" class="footer-link none-padding"><strong>{{ site.phone_number }}</strong></a>
-        </div>
-      </div>
-      <div class="footer-rights-wrapper">
-        <div class="footer-copyright">© {{ site.name }}. All Rights Reserved <span id="footer-year"></span>. </div>
-      </div>
-    </div>
-  </div>
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=64436db9e250ac2b29ff3811" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <div class="footer-copyright">© {{ site.name }}. All Rights Reserved <span id="footer-year"></span>.</div>
   <script>
     document.getElementById("footer-year").innerHTML = new Date().getFullYear();
   </script>
-  <script src="/js/webflow.js" type="text/javascript"></script>
 </body>
 </html>
