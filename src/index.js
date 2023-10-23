@@ -97,3 +97,5 @@ try {
 } catch (error) {
   console.error('Unable to connect\n', error);
 }
+
+module.exports = app;
