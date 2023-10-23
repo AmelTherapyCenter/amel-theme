@@ -1,26 +1,27 @@
 {
-	"name": "amel-theme",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"type": "module",
-	"scripts": {
-		"dev": "nodemon index.js",
-		"start": "node index.js",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "npx tailwindcss -i tailwind-input.css -o assets/css/tailwind-output.css --watch"
-	},
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"core-util-is": "^1.0.3",
-		"dotenv": "^16.1.4",
-		"express": "^4.18.2",
-		"express-handlebars": "^7.0.7",
-		"nodemailer": "^6.9.7",
-		"prettier": "^2.8.8"
-	},
-	"devDependencies": {
-		"nodemon": "^2.0.22"
-	}
+  "name": "amel-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tailwindcss -i tailwind-input.css -o assets/css/tailwind-output.css --watch",
+    "vercel-build": "echo hello"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "core-util-is": "^1.0.3",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "nodemailer": "^6.9.7",
+    "prettier": "^2.8.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }

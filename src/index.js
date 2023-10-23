@@ -17,28 +17,28 @@ const __dirname = dirname(__filename);
 app.locals.site = site;
 app.locals.theme = theme;
 app.locals.menus = {
-	main_menu: menus.main_menu
+  main_menu: menus.main_menu
 };
 app.locals.dev_envrionment = NODE_ENV === 'development' ? true : false;
 
 // Static assets
-app.use(express.static('assets'));
+app.use(express.static('public'));
 
 // View engine - Handlebars
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'hbs');
 app.engine(
-	'hbs',
-	expressHbs.engine({
-		defaultLayout: 'theme',
-		extname: '.hbs'
-	})
+  'hbs',
+  expressHbs.engine({
+    defaultLayout: 'theme',
+    extname: '.hbs'
+  })
 );
 
 const hbs = expressHbs.create({});
 
 hbs.handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
-	return arg1 == arg2 ? options.fn(this) : options.inverse(this);
+  return arg1 == arg2 ? options.fn(this) : options.inverse(this);
 });
 
 // Allow cross-origin request from https://cozyearth.com
@@ -74,26 +74,26 @@ app.use('/', indexRouter);
 
 // Error handling
 app.use((req, res, next) => {
-	res.status(404);
-	res.render('404', {
-		dark_bg: true,
-		page: {
-			title: 'Page Not Found',
-			description: "We're sorry but this page could not be found"
-		}
-	});
+  res.status(404);
+  res.render('404', {
+    dark_bg: true,
+    page: {
+      title: 'Page Not Found',
+      description: "We're sorry but this page could not be found"
+    }
+  });
 });
 
 app.use((err, req, res, next) => {
-	console.error(err.stack);
-	res.status(500).send('There was an error.');
+  console.error(err.stack);
+  res.status(500).send('There was an error.');
 });
 
 // Port listener
 try {
-	app.listen(PORT, () => {
-		console.log(`Running on ${HOST}:${PORT}`);
-	});
+  app.listen(PORT, () => {
+    console.log(`Running on ${HOST}:${PORT}`);
+  });
 } catch (error) {
-	console.error('Unable to connect\n', error);
+  console.error('Unable to connect\n', error);
 }
