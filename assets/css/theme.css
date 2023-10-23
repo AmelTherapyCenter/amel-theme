@@ -3,45 +3,48 @@
 *****/
 
 :root {
-    /* Fonts */
-    --font-heading-family: 'Jacques Francois', serif;
-    --font-body-family: 'Cormorant Garamond', serif;
+  /* Fonts */
+  --font-heading-family: 'Jacques Francois', serif;
+  --font-body-family: 'Cormorant Garamond', serif;
 
-    /* Colors */
-    --color-light-cream: #FBF3DD;
-    --color-dark-cream: #F9E8BC;
-    --color-dark-green: #375560;
-    --color-light-blue: #B9DAEF;
+  /* Colors */
+  --color-light-cream: #fbf3dd;
+  --color-dark-cream: #f9e8bc;
+  --color-dark-green: #375560;
+  --color-light-green: #a3b2b8;
+  --color-light-blue: #b9daef;
+  --color-white: #ffffff;
+  --color-black: #000000;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-    box-sizing: border-box;
-    height: 100%;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 body {
-    min-height: 100%;
-    margin: 0;
-    font-size: 16px;
-    font-family: var(--font-body);
-    font-weight: 400;
-    color: var(--color-dark-green);
-    line-height: 1;
-    overflow-x: hidden;
-    background-color: var(--color-light-cream)
+  min-height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--color-dark-green);
+  line-height: 1;
+  overflow-x: hidden;
+  background-color: var(--color-light-cream);
 }
 
 @media screen and (max-width: 768px) {
-    body {
-        font-size: 16px;
-        line-height: 1;
-    }
+  body {
+    font-size: 16px;
+    line-height: 1;
+  }
 }
 
 /***** Elements *****/
@@ -57,9 +60,9 @@ h5,
 .h5,
 h6,
 .h6 {
-    font-style: normal;
-    font-weight: 900;
-    font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 900;
+  font-family: var(--font-heading);
 }
 
 h1,
@@ -68,81 +71,81 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 1.2;
+  line-height: 1.2;
 }
 
 a {
-    color: var(--color-dark-green);
-    align-items: center;
-    text-decoration: none;
-    transition: color .3s;
+  color: var(--color-dark-green);
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 img {
-    border: 0;
-    max-width: 100%;
-    vertical-align: middle;
-    display: inline-block;
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 /***** Animation *****/
 .animated {
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
- 
+
 @-webkit-keyframes fadeInDown {
-    0% {
-       opacity: 0;
-       -webkit-transform: translateY(-20px);
-    }
-    100% {
-       opacity: 1;
-       -webkit-transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
 }
- 
+
 @keyframes fadeInDown {
-    0% {
-       opacity: 0;
-       transform: translateY(-20px);
-    }
-    100% {
-       opacity: 1;
-       transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
- 
+
 .fadeInDown {
-    -webkit-animation-name: fadeInDown;
-    animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
 }
 
 @-webkit-keyframes fadeInUp {
-    0% {
-       opacity: 0;
-       -webkit-transform: translateY(20px);
-    }
-    100% {
-       opacity: 1;
-       -webkit-transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
 }
- 
+
 @keyframes fadeInUp {
-    0% {
-       opacity: 0;
-       transform: translateY(20px);
-    }
-    100% {
-       opacity: 1;
-       transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fadeInUp {
-    -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
 }

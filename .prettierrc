@@ -9,6 +9,5 @@
   "liquidSingleQuote": true,
   "embeddedSingleQuote": true,
   "singleLineLinkTags": false,
-  "indentSchema": true,
-  "plugins": ["@shopify/prettier-plugin-liquid"]
+  "indentSchema": true
 }

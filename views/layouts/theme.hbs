@@ -5,8 +5,6 @@
     <meta property="og:type" content="website">
     <meta content="summary_large_image" name="twitter:card">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/tree-techs-image_iguqpd.jpg" property="og:image">
-    <meta content="https://res.cloudinary.com/wilki-digital-cloudinary/image/upload/v1691184217/tree-techs-image_iguqpd.jpg" property="twitter:image">
 
     <!-- Meta for SEO -->
     {{#if page.description }}
@@ -40,31 +38,39 @@
     <link href="/css/theme.css" rel="stylesheet" type="text/css">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
     <link href="/css/tailwind-output.css" rel="stylesheet" type="text/css">
-
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-    <div class="py-6 px-16 w-full sticky top-0">
-        <div class="bg-dark-green py-6 xl:px-16 px-3 w-full mx-auto max-w-[{{ theme.page_width }}]">
+    <!-- Main Nav -->
+    <header class="py-3 lg:py-6 lg:px-16 px-3 w-full sticky top-0 z-10">
+        <div class="bg-dark-green md:py-6 py-3 xl:px-16 px-3 w-full mx-auto max-w-[{{ theme.page_width }}]">
+            <div id="hamburgerMenu" class="lg:hidden flex flex-col items-end cursor-pointer">
+                <div class="w-5 bg-light-cream h-[2px] mb-1"></div>
+                <div class="w-5 bg-light-cream h-[2px] mb-1"></div>
+                <div class="w-5 bg-light-cream h-[2px] mb-1"></div>
+            </div>
             <nav class="flex gap-6 justify-center items-center">
                 <div class="w-2/5 flex flex-col items-end">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="265" height="77" viewBox="0 0 265 77" fill="none">
+                    <svg class="w-full" xmlns="http://www.w3.org/2000/svg" width="265" height="77" viewBox="0 0 265 77" fill="none">
                     <path d="M51.323 74.5174C56.1998 69.3181 61.0086 64.078 65.971 58.9319C71.019 53.6954 76.2228 48.5493 81.3564 43.3641L79.9386 41.3515C74.9586 42.7985 69.0196 43.3109 65.1765 45.8663C53.7636 53.4577 41.3192 54.3036 28.291 50.5141C19.6809 48.0102 11.5997 44.2597 3.48999 40.7521C1.75612 39.9984 -0.151149 37.8066 0.000290835 36.4288C0.131978 35.3098 3.10591 33.8274 5.06365 33.5241C18.217 31.4848 31.3857 29.5413 44.6136 27.9258C53.9919 26.7767 61.9743 29.2594 69.1205 34.4622C72.2283 36.7267 76.9339 37.569 81.7449 38.1258C68.2404 30.334 60.945 19.751 57.4662 7.31661C56.8276 5.03261 57.8481 2.44715 58.1005 0C60.6377 0.89906 63.6314 1.37253 65.6352 2.76634C79.5435 12.4414 94.5163 21.3451 101.641 35.9411C102.488 37.6772 107.154 39.1029 110.086 39.1473C158.018 39.8566 205.956 40.3159 253.89 40.8993C257.589 40.9454 261.278 41.5217 264.972 41.8515C264.981 42.5715 264.99 43.292 265 44.0132C261.146 44.3146 257.286 44.9158 253.436 44.8732C206.687 44.359 159.938 43.8571 113.205 43.0503C106.368 42.9332 102.716 44.1018 100.128 49.7462C93.983 63.1843 81.3059 71.5915 64.4786 75.8438C61.0086 76.7216 57.1656 76.64 53.5047 77C52.7731 76.1725 52.0459 75.3449 51.323 74.5174ZM88.9087 46.854L86.4352 45.4602L62.2509 69.6444C77.0086 67.7274 86.3737 60.9552 91.6609 50.3438L81.1457 59.659L79.7301 58.595L88.9087 46.854ZM60.6509 40.7858H18.6098C32.8188 49.4607 50.8512 49.4395 60.6509 40.7858ZM66.6492 8.77781C69.4497 22.0279 74.6887 27.5552 84.1548 29.7913L75.0486 20.3929L76.7254 19.2119L89.96 29.0944L91.8102 27.3318L66.6492 8.77781ZM25.6441 36.1149H61.0152C49.0931 29.614 37.3555 32.4779 25.6441 36.1149Z" fill="#FBF3DD"/>
                     </svg>
-                    <div class="flex w-full pr-6 pt-4 justify-around">
+                    <div class="hidden lg:flex w-full pr-6 pt-4 justify-around">
                         <div class="w-1/2 group relative">
                             <a 
+                                data-handle="{{ menus.main_menu.0.handle }}"
                                 href="{{ menus.main_menu.0.handle }}" 
                                 class="w-full h-full flex flex-col items-center"
                             >
-                                <div class="mx-auto w-28 group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.0.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
+                                <div class="active_link mx-auto max-w-[105px] group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.0.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
                                 <span class="hover:opacity-70 transition-all duration-300 text-center px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.0.title }}</span>
                             </a>
                             {{#if menus.main_menu.0.children }}
                                 <div class="w-full left-0 right-0 group-hover:flex flex-col items-center hidden absolute top-10 p-3 bg-dark-green">
                                     {{#each menus.main_menu.0.children }}
-                                        <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl">
+                                        <a 
+                                            href="{{ this.handle }}" 
+                                            data-handle="{{ this.handle }}" 
+                                            class="child_link hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl"
+                                        >
                                             {{ this.title }}
                                         </a>
                                     {{/each}}
@@ -73,16 +79,21 @@
                         </div>
                         <div class="w-1/2 group relative">
                             <a 
+                                data-handle="{{ menus.main_menu.1.handle }}"
                                 href="{{ menus.main_menu.1.handle }}" 
                                 class="w-full h-full flex flex-col items-center"
                             >
-                                <div class="mx-auto w-28 group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.1.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
+                                <div class="active_link mx-auto max-w-[105px] group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.1.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
                                 <span class="hover:opacity-70 transition-all duration-300 px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.1.title }}</span>
                             </a>
                             {{#if menus.main_menu.1.children }}
                                 <div class="w-full left-0 right-0 group-hover:flex flex-col items-center hidden absolute top-10 p-3 bg-dark-green">
                                     {{#each menus.main_menu.1.children }}
-                                        <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl">
+                                        <a 
+                                            href="{{ this.handle }}" 
+                                            data-handle="{{ this.handle }}"  
+                                            class="child_link hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl"
+                                        >
                                             {{ this.title }}
                                         </a>
                                     {{/each}}
@@ -94,28 +105,33 @@
                 <img 
                     src="/logos/amel-logo.png" 
                     alt="Amel therapy center logo" 
-                    class="w-32 h-auto" 
+                    class="md:w-32 w-20 h-auto" 
                     width="auto" 
                     height="auto" 
                     loading="eager"
                 /> 
-                <div class="w-2/5 flex flex-col items-start">
-                    <svg width="265" height="77" viewBox="0 0 265 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="w-2/5 hiddenlg:flex flex-col items-start">
+                    <svg class="w-full" width="265" height="77" viewBox="0 0 265 77" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M213.677 2.48261C208.8 7.68192 203.991 12.922 199.029 18.0681C193.981 23.3046 188.777 28.4507 183.644 33.6359L185.061 35.6485C190.041 34.2015 195.98 33.6891 199.824 31.1337C211.236 23.5423 223.681 22.6964 236.709 26.4859C245.319 28.9898 253.4 32.7403 261.51 36.2479C263.244 37.0016 265.151 39.1934 265 40.5712C264.868 41.6902 261.894 43.1726 259.936 43.4759C246.783 45.5152 233.614 47.4587 220.386 49.0742C211.008 50.2233 203.026 47.7406 195.879 42.5378C192.772 40.2733 188.066 39.431 183.255 38.8742C196.76 46.666 204.055 57.249 207.534 69.6834C208.172 71.9674 207.152 74.5529 206.899 77C204.362 76.1009 201.369 75.6275 199.365 74.2337C185.456 64.5586 170.484 55.6549 163.359 41.0589C162.512 39.3228 157.846 37.8971 154.914 37.8527C106.982 37.1434 59.0437 36.6841 11.1097 36.1007C7.41147 36.0546 3.72205 35.4783 0.0282288 35.1485C0.0194397 34.4285 0.00991821 33.708 -0.000305176 32.9868C3.85373 32.6854 7.71436 32.0842 11.564 32.1268C58.3128 32.641 105.062 33.1429 151.795 33.9497C158.632 34.0668 162.284 32.8982 164.872 27.2538C171.017 13.8157 183.694 5.40855 200.521 1.15619C203.991 0.278404 207.834 0.359978 211.495 0C212.227 0.827538 212.954 1.65508 213.677 2.48261ZM176.091 30.146L178.565 31.5398L202.749 7.35563C187.991 9.27256 178.626 16.0448 173.339 26.6562L183.854 17.341L185.27 18.405L176.091 30.146ZM204.349 36.2142L246.39 36.2142C232.181 27.5393 214.149 27.5605 204.349 36.2142ZM198.351 68.2222C195.55 54.9721 190.311 49.4448 180.845 47.2087L189.951 56.6071L188.275 57.7881L175.04 47.9056L173.19 49.6682L198.351 68.2222ZM239.356 40.8851L203.985 40.8851C215.907 47.386 227.645 44.5221 239.356 40.8851Z" fill="#FBF3DD"/>
                     </svg>
-                    <div class="flex w-full pl-6 pt-3 justify-around">
+                    <div class="hidden lg:flex w-full pl-6 pt-3 justify-around">
                         <div class="w-1/2 group relative">
                             <a 
+                                data-handle="{{ menus.main_menu.2.handle }}"
                                 href="{{ menus.main_menu.2.handle }}" 
                                 class="w-full h-full flex flex-col items-center"
                             >
-                                <div class="mx-auto w-28 group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.2.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
+                                <div class="active_link mx-auto max-w-[105px] group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.2.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
                                 <span class="hover:opacity-70 transition-all duration-300 px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.2.title }}</span>
                             </a>
                             {{#if menus.main_menu.2.children }}
                                 <div class="w-full left-0 right-0 group-hover:flex flex-col items-center hidden absolute top-10 p-3 bg-dark-green">
                                     {{#each menus.main_menu.2.children }}
-                                        <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl">
+                                        <a 
+                                            href="{{ this.handle }}" 
+                                            data-handle="{{ this.handle }}" 
+                                            class="child_link hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl"
+                                        >
                                             {{ this.title }}
                                         </a>
                                     {{/each}}
@@ -124,16 +140,21 @@
                         </div>
                         <div class="w-1/2 group relative">
                             <a 
+                                data-handle="{{ menus.main_menu.3.handle }}"
                                 href="{{ menus.main_menu.3.handle }}" 
                                 class="w-full h-full flex flex-col items-center"
                             >
-                                <div class="mx-auto w-28 group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.3.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
+                                <div class="active_link mx-auto max-w-[105px] group-hover:bg-light-blue transition-all duration-300 bg-transparent {{#ifEquals page.path menus.main_menu.3.handle }}bg-light-blue{{/ifEquals}} w-full h-1 mb-1"></div>
                                 <span class="hover:opacity-70 transition-all duration-300 px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.3.title }}</span>
                             </a>
                             {{#if menus.main_menu.3.children }}
                                 <div class="w-full left-0 right-0 group-hover:flex flex-col items-center hidden absolute top-10 p-3 bg-dark-green">
                                     {{#each menus.main_menu.3.children }}
-                                        <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl">
+                                        <a 
+                                            href="{{ this.handle }}" 
+                                            data-handle="{{ this.handle }}" 
+                                            class="child_link hover:opacity-70 transition-all duration-300 mb-2 text-center text-light-cream font-heading lg:text-2xl text-xl"
+                                        >
                                             {{ this.title }}
                                         </a>
                                     {{/each}}
@@ -144,13 +165,158 @@
                 </div>
             </nav>
         </div>
+    </header>
+    <!-- /Main Nav -->
+
+    <!-- Mobile Nav -->
+    <div id="mobileMenu" class="z-10 fixed w-0 h-screen no-scrollbar overflow-y-scroll left-[-800px] top-0 bg-dark-green transition-all duration-300">
+        <div class="relative w-full h-full">
+            <span id="mobileCloseBtn" class="absolute top-3 right-3 w-3 h-3 text-light-cream cursor-pointer">&#10005;</span>
+            <div class="p-10">
+                <div class="w-full group relative mb-5">
+                    <a 
+                        href="{{ menus.main_menu.0.handle }}" 
+                        class="w-full h-full flex flex-col items-start"
+                    >
+                        <span class="hover:opacity-70 transition-all duration-300 px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.0.title }}</span>
+                    </a>
+                    {{#if menus.main_menu.0.children }}
+                        <div class="w-full left-0 right-0 flex flex-col items-start pl-10 top-10 p-3 bg-dark-green">
+                            {{#each menus.main_menu.0.children }}
+                                <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-light-cream font-heading lg:text-2xl text-xl">
+                                    {{ this.title }}
+                                </a>
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="w-full group relative mb-5">
+                    <a 
+                        href="{{ menus.main_menu.1.handle }}" 
+                        class="w-full h-full flex flex-col items-start"
+                    >
+                        <span class="hover:opacity-70 transition-all duration-300 px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.1.title }}</span>
+                    </a>
+                    {{#if menus.main_menu.1.children }}
+                        <div class="w-full left-0 right-0 flex flex-col items-start pl-10 top-10 p-3 bg-dark-green">
+                            {{#each menus.main_menu.1.children }}
+                                <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-light-cream font-heading lg:text-2xl text-xl">
+                                    {{ this.title }}
+                                </a>
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="w-full group relative mb-5">
+                    <a 
+                        href="{{ menus.main_menu.2.handle }}" 
+                        class="w-full h-full flex flex-col items-start"
+                    >
+                        <span class="hover:opacity-70 transition-all duration-300 px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.2.title }}</span>
+                    </a>
+                    {{#if menus.main_menu.2.children }}
+                        <div class="w-full left-0 right-0 flex flex-col items-start pl-10 top-10 p-3 bg-dark-green">
+                            {{#each menus.main_menu.2.children }}
+                                <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-light-cream font-heading lg:text-2xl text-xl">
+                                    {{ this.title }}
+                                </a>
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="w-full group relative mb-5">
+                    <a 
+                        href="{{ menus.main_menu.3.handle }}" 
+                        class="w-full h-full flex flex-col items-start"
+                    >
+                        <span class="hover:opacity-70 transition-all duration-300 px-3 text-light-cream font-heading lg:text-2xl text-xl">{{ menus.main_menu.3.title }}</span>
+                    </a>
+                    {{#if menus.main_menu.3.children }}
+                        <div class="w-full left-0 right-0 flex-col items-start pl-10 top-10 p-3 bg-dark-green">
+                            {{#each menus.main_menu.3.children }}
+                                <a href="{{ this.handle }}" class="hover:opacity-70 transition-all duration-300 mb-2 text-light-cream font-heading lg:text-2xl text-xl">
+                                    {{ this.title }}
+                                </a>
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- /Mobile Nav -->
 
-  {{{ body }}}
+    {{{ body }}}
 
-  <div class="footer-copyright">© {{ site.name }}. All Rights Reserved <span id="footer-year"></span>.</div>
-  <script>
-    document.getElementById("footer-year").innerHTML = new Date().getFullYear();
-  </script>
+    <!-- Footer -->
+    <footer class="py-5 md:px-28 px-10 w-full bg-dark-green">
+        <div class="flex lg:flex-row flex-col w-full lg:justify-between justify-center items-start lg:gap-10 gap-5">
+            <img 
+                class="w-24 h-24"
+                src="/logos/amel-logo-footer.png"
+                alt="Amel logo in footer"
+                width="auto"
+                height="auto"
+                loading="lazy"
+            />
+            <div class="flex flex-col lg:max-w-[250px] max-w-none">
+                <h3 class="text-white font-body md:text-2xl text-xl font-bold mb-2">Contact</h3>
+                {{#each site.contact }}
+                    <a 
+                        class="text-white font-body md:text-xl text-base"
+                        {{#ifEquals this.type 'tel'}}href="tel:{{ this.information }}"{{/ifEquals}}
+                        {{#ifEquals this.type 'email'}}href="mailto:{{ this.information }}"{{/ifEquals}}
+                    >
+                        {{#ifEquals this.type 'tel'}}Phone: {{/ifEquals}}
+                        {{#ifEquals this.type 'email'}}Email: {{/ifEquals}}
+                        <span>{{ this.information }}</span>
+                    </a>
+                {{/each}}
+            </div>
+            <div class="flex flex-col lg:max-w-[250px] max-w-none">
+                <h3 class="text-white font-body md:text-2xl text-xl font-bold mb-2">Location</h3>
+                <p class="text-white font-body md:text-xl text-base">{{ site.location }}</p>
+            </div>
+            <div class="flex flex-col lg:max-w-[250px] max-w-none">
+                {{#each site.details }}
+                    <h3 class="text-white font-body md:text-2xl text-xl font-bold mb-2">{{ this.title }}</h3>
+                    {{#each this.information }}
+                        <p class="text-white font-body md:text-xl text-base">{{ this.days }}: {{ this.hours }}</p>
+                    {{/each}}
+                {{/each}}
+            </div>
+            <div class="flex flex-col lg:max-w-[250px] max-w-none">
+                <h3 class="text-white font-body md:text-2xl text-xl font-bold mb-2">Follow Us</h3>
+                {{#each site.social_media }}
+                    <a class="text-white font-body md:text-xl text-base">
+                        {{ this.platform }}: 
+                        <span>{{ this.handle }}</span>
+                    </a>
+                {{/each}}
+            </div>
+        </div>
+        <div class="footer-copyright">© {{ site.name }}. All Rights Reserved <span id="footer-year"></span>.</div>
+    </footer>
+    <!-- /Footer -->
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            document.getElementById("footer-year").innerHTML = new Date().getFullYear();
+
+            document.getElementById("hamburgerMenu").addEventListener("click", () => {
+                document.getElementById("mobileMenu").classList.add("w-[100vw!important]", "left-[0px!important]");
+            })
+            document.getElementById("mobileCloseBtn").addEventListener("click", () => {
+                document.getElementById("mobileMenu").classList.remove("w-[100vw!important]", "left-[0px!important]");
+            })
+
+            const childLinks = document.getElementsByClassName("child_link");
+            for (let i = 0; i < childLinks.length; i++) {
+                if (window.location.pathname === childLinks[i].dataset.handle) {
+                    childLinks[i].parentElement.previousElementSibling.getElementsByClassName("active_link")[0].classList.add("bg-light-blue");
+                }
+            }
+        });
+    </script>
 </body>
 </html>

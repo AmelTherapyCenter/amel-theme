@@ -1,1 +1,211 @@
-<h1 class="text-3xl font-extrabold text-dark-cream">{{ greeting }}</h1>
+<div
+	class='lg:pt-12 pt-6 lg:pb-8 pb-3 lg:px-32 px-3 w-full max-w-[{{theme.page_width}}px] mx-auto flex lg:flex-row flex-col lg:gap-20 gap-10 justify-center items-stretch'
+>
+	<div
+		class='lg:px-10 px-3 lg:pt-7 py-3 lg:pb-3 bg-cover bg-no-repeat bg-center lg:w-1/2 w-full'
+		style="background-image: url('/backgrounds/home-bg-1.jpg')"
+	>
+		<h1
+			class='color-dark-green font-body md:text-5xl text-3xl font-bold text-center block mb-3'
+		>
+			<span class='lg:text-3xl text-xl mb-1 block'>Welcome to</span>
+			Amel Therapy Center
+		</h1>
+		<img
+			src='/backgrounds/decor-line.png'
+			alt='Decor lines'
+			class='w-32 md:w-48 h-auto mx-auto mb-3'
+			width='auto'
+			height='auto'
+			loading='eager'
+		/>
+		<p class='color-dark-green lg:text-2xl text-xl text-center font-body'>
+			Amel is a
+			<span class='italic font-bold'>bi-lingual Spanish and English</span>
+			speaking substance abuse/mental health therapy center focused on
+			healing and recovery. We provide PHP and IOP programs to offer a
+			safe space to begin your path to sobriety, utilizing unique,
+			holistic approaches, specialized care, and treatment plans tailored
+			to your needs. You don't have to face these challenges alone. We are
+			here to walk beside you, providing the care, support, and tools you
+			need to create a brighter, more fulfilling future.
+		</p>
+	</div>
+	<div class='lg:w-1/2 w-full relative min-h-[300px]'>
+		<img
+			src='/images/home-img-1.jpg'
+			alt='Family in kitchen'
+			class='absolute w-full h-full object-cover'
+			width='auto'
+			height='auto'
+			loading='eager'
+		/>
+	</div>
+</div>
+
+<div
+	class='w-full p-5 text-center bg-cover bg-no-repeat bg-center'
+	style="background-image: url('/backgrounds/home-bg-2.jpg')"
+>
+	<div class='w-full max-w-[1200px] mx-auto'>
+		<div class='flex justify-center items-center'>
+			{{#each svg_count}}
+				<img
+					src='/backgrounds/diamond-tiles.png'
+					alt='Diamond tiles'
+					class='w-16 h-auto'
+					width='auto'
+					height='auto'
+					loading='lazy'
+				/>
+			{{/each}}
+		</div>
+		<h2
+			class='text-dark-green text-center font-body lg:text-5xl text-3xl font-bold mt-3 mb-5'
+		>
+			Whether you are at your highest peak or deepest trench, hope is a
+			vital tool.
+		</h2>
+		<p
+			class='text-dark-green text-center font-heading lg:text-2xl text-xl mb-5'
+		>
+			Most treatment centers don't dig far enough into the root of the
+			problem. Here at Amel, we aim to address the underlying issues that
+			cause you to relapse. Our facility offers the best chance at long
+			term sobriety while fostering hope for your new life.
+		</p>
+		<div class='flex justify-center items-center'>
+			{{#each svg_count}}
+				<img
+					src='/backgrounds/diamond-tiles.png'
+					alt='Diamond tiles'
+					class='w-16 h-auto'
+					width='auto'
+					height='auto'
+					loading='lazy'
+				/>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+<div class='flex items-stretch'>
+	<div class='bg-light-blue md:px-3 px-1 md:block hidden'>
+		<div class='px-3 bg-light-cream md:w-32 w-10 overflow-hidden'>
+			{{#each tile_count}}
+				<img
+					src='/backgrounds/latin-tile-design.png'
+					alt='Latin tile design'
+					class='w-full h-auto {{#if this.mobile }}lg:hidden block{{/if}}'
+					width='auto'
+					height='auto'
+					loading='lazy'
+				/>
+			{{/each}}
+		</div>
+	</div>
+	<div
+		class='bg-light-cream md:pt-20 py-10 w-full max-w-[{{theme.page_width}}px] mx-auto'
+	>
+		<div class='flex md:px-10 px-5 md:mb-20 mb-10 lg:flex-row flex-col'>
+			<div class='lg:w-3/5 w-full md:pr-10 pr-5'>
+				<h3
+					class='text-dark-green font-body md:text-5xl text-2xl font-bold md:mb-10 mb-5'
+				>
+					Privacy & Quality
+				</h3>
+				<p class='text-dark-green font-body md:text-2xl text-lg'>
+					We prioritize the privacy and confidentiality of our
+					clients. All personal information shared during therapy
+					sessions or assessments is treated with the utmost
+					discretion and in compliance with professional ethical
+					standards. ​
+					<br />
+					<br />
+					We encourage open communication and actively seek feedback
+					to ensure your satisfaction with our therapy center and the
+					care you receive.
+				</p>
+			</div>
+			<img
+				src='/images/home-img-2.jpg'
+				alt='Friendly men smiling'
+				class='lg:w-2/5 w-full h-auto md:mt-12 mt-8'
+				width='auto'
+				height='auto'
+				loading='lazy'
+			/>
+		</div>
+		<div
+			class='flex md:px-10 px-5 md:mb-20 mb-10 lg:flex-row-reverse flex-col'
+		>
+			<div class='lg:w-3/5 w-full lg:text-right text-left'>
+				<h3
+					class='text-dark-green font-body md:text-5xl text-2xl font-bold md:mb-10 mb-5'
+				>
+					Treatment of Body,
+					<br />
+					Mind, & Spirit
+				</h3>
+				<p class='text-dark-green font-body md:text-2xl text-lg'>
+					In addition to traditional therapy models, we embrace
+					holistic approaches that address the mind, body, and spirit.
+					These may include mindfulness practices, yoga, art therapy,
+					and relaxation techniques, promoting overall well-being and
+					self-care.
+				</p>
+			</div>
+			<img
+				src='/images/home-img-3.jpg'
+				alt='People doing yoga'
+				class='lg:w-2/5 w-full h-auto md:mt-12 mt-8 mr-20'
+				width='auto'
+				height='auto'
+				loading='lazy'
+			/>
+		</div>
+		<div class='flex md:px-10 px-5 md:mb-20 mb-10 lg:flex-row flex-col'>
+			<div class='lg:w-3/5 w-full md:pr-10 pr-5'>
+				<h3
+					class='text-dark-green font-body md:text-5xl text-2xl font-bold md:mb-10 mb-5'
+				>
+					Team of Experts
+				</h3>
+				<p class='text-dark-green font-body md:text-2xl text-lg'>
+					We have a highly qualified team of experts who specialize in
+					trauma therapy. Our team is dedicated to providing the
+					highest level of care and support to individuals who have
+					experienced trauma. ​
+					<br />
+					<br />
+					You can have confidence in the expertise, compassion, and
+					dedication of our team as they guide you through your trauma
+					recovery journey, empowering you to reclaim your life and
+					find healing and resilience.
+				</p>
+			</div>
+			<img
+				src='/images/home-img-4.jpg'
+				alt='Doctor and elderly woman'
+				class='lg:w-2/5 w-full h-auto md:mt-12 mt-8'
+				width='auto'
+				height='auto'
+				loading='lazy'
+			/>
+		</div>
+	</div>
+	<div class='bg-light-blue md:px-3 px-1 md:block hidden'>
+		<div class='px-3 bg-light-cream md:w-32 w-10 overflow-hidden'>
+			{{#each tile_count}}
+				<img
+					src='/backgrounds/latin-tile-design.png'
+					alt='Latin tile design'
+					class='w-full h-auto {{#if this.mobile }}lg:hidden block{{/if}}'
+					width='auto'
+					height='auto'
+					loading='lazy'
+				/>
+			{{/each}}
+		</div>
+	</div>
+</div>
