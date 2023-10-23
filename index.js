@@ -22,7 +22,7 @@ app.locals.menus = {
 app.locals.dev_envrionment = NODE_ENV === 'development' ? true : false;
 
 // Static assets
-app.use(express.static('public'));
+app.use(express.static('assets'));
 
 // View engine - Handlebars
 app.set('views', `${__dirname}/views`);
@@ -97,5 +97,3 @@ try {
 } catch (error) {
   console.error('Unable to connect\n', error);
 }
-
-module.exports = app;
