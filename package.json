@@ -8,8 +8,7 @@
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tailwindcss -i tailwind-input.css -o assets/css/tailwind-output.css --watch",
-    "vercel-build": "echo hello"
+    "build": "npx tailwindcss -i tailwind-input.css -o assets/css/tailwind-output.css --watch"
   },
   "author": "",
   "license": "ISC",
