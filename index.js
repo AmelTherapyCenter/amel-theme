@@ -69,6 +69,10 @@ hbs.handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
 // 	res.sendFile(`${__dirname}/views/sitemap.xml`);
 // });
 
+// Parse JSON body
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // Routes
 app.use('/', indexRouter);
 
@@ -76,7 +80,6 @@ app.use('/', indexRouter);
 app.use((req, res, next) => {
   res.status(404);
   res.render('404', {
-    dark_bg: true,
     page: {
       title: 'Page Not Found',
       description: "We're sorry but this page could not be found"

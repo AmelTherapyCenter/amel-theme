@@ -14,8 +14,16 @@
   >
     <rect width='400' height='42' fill='url(#pattern0)' />
     <defs>
-      <pattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'>
-        <use xlink:href='#image0_34_567' transform='matrix(0.000340599 0 0 0.0032438 0 -0.0368496)' />
+      <pattern
+        id='pattern0'
+        patternContentUnits='objectBoundingBox'
+        width='1'
+        height='1'
+      >
+        <use
+          xlink:href='#image0_34_567'
+          transform='matrix(0.000340599 0 0 0.0032438 0 -0.0368496)'
+        />
       </pattern>
       <image
         id='image0_34_567'
@@ -27,17 +35,24 @@
   </svg>
 
   <div class='px-5 mb-10'>
-    <h1 class='text-dark-green text-center font-body md:text-6xl text-4xl font-bold mb-5'>
+    <h1
+      class='text-dark-green text-center font-body md:text-6xl text-4xl font-bold mb-5'
+    >
       Contact Us
     </h1>
-    <p class='text-center text-dark-green font-body md:text-2xl text-xl font-bold max-w-[1150px] mx-auto'>
-      Contact us today to to learn more about our services, treatment approaches, and the compassionate professionals
-      who make up our team. You can also find information on how to get started on your path to healing. We encourage
-      you to reach out and schedule a consultation to discuss your unique needs and goals.
+    <p
+      class='text-center text-dark-green font-body md:text-2xl text-xl font-bold max-w-[1150px] mx-auto'
+    >
+      Contact us today to to learn more about our services, treatment
+      approaches, and the compassionate professionals who make up our team. You
+      can also find information on how to get started on your path to healing.
+      We encourage you to reach out and schedule a consultation to discuss your
+      unique needs and goals.
       <br />
       <br />
-      Thank you for considering our Therapy Center. We look forward to being a part of your journey toward a healthier,
-      happier, and more fulfilling life.
+      Thank you for considering our Therapy Center. We look forward to being a
+      part of your journey toward a healthier, happier, and more fulfilling
+      life.
     </p>
   </div>
 
@@ -52,7 +67,9 @@
         <form method='post' action='/contact'>
           <div class='flex md:flex-row flex-col justify-between md:pt-10 pt-0'>
             <div class='border-dark-green border-b md:w-2/5 w-full mb-5'>
-              <label class='text-dark-green font-body md:text-3xl text-xl font-medium pb-2 block'>
+              <label
+                class='text-dark-green font-body md:text-3xl text-xl font-medium pb-2 block'
+              >
                 First Name*
               </label>
               <input
@@ -63,7 +80,9 @@
               />
             </div>
             <div class='border-dark-green border-b md:w-2/5 w-full mb-5'>
-              <label class='text-dark-green font-body md:text-3xl text-xl font-medium pb-2 block'>
+              <label
+                class='text-dark-green font-body md:text-3xl text-xl font-medium pb-2 block'
+              >
                 Last Name*
               </label>
               <input
@@ -76,7 +95,9 @@
           </div>
           <div class='flex md:flex-row flex-col justify-between md:pt-10 pt-0'>
             <div class='border-dark-green border-b md:w-2/5 w-full mb-5'>
-              <label class='text-dark-green font-body md:text-3xl text-xl font-medium pb-2 block'>
+              <label
+                class='text-dark-green font-body md:text-3xl text-xl font-medium pb-2 block'
+              >
                 Email*
               </label>
               <input
@@ -87,7 +108,9 @@
               />
             </div>
             <div class='border-dark-green border-b md:w-2/5 w-full mb-5'>
-              <label class='text-dark-green font-body md:text-3xl text-xl font-medium pb-2 block'>
+              <label
+                class='text-dark-green font-body md:text-3xl text-xl font-medium pb-2 block'
+              >
                 Phone Number
                 <span class='text-xl'>
                   (optional)
@@ -97,6 +120,8 @@
                 name='phone'
                 pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
                 maxlength='12'
+                oninvalid="this.setCustomValidity('Please use the format 123-456-7890')"
+                id='contactPhone'
                 type='tel'
                 class='outline-none text-dark-green font-body md:text-2xl text-lg font-medium'
               />
@@ -104,10 +129,16 @@
           </div>
           <div class='flex flex-col md:pt-10 pt-0 md:pl-10 pl-0'>
             <div class='border-dark-green border-b md:w-2/5 w-full'>
-              <label class='text-dark-green font-body md:text-3xl text-xl font-medium pb-2 block'>
+              <label
+                class='text-dark-green font-body md:text-3xl text-xl font-medium pb-2 block'
+              >
                 Subject
               </label>
-              <input name='subject' type='text' class='text-dark-green font-body md:text-2xl text-lg font-medium' />
+              <input
+                name='subject'
+                type='text'
+                class='text-dark-green font-body md:text-2xl text-lg font-medium'
+              />
             </div>
             <textarea
               class='md:mt-14 mt-5 text-light-green font-body md:text-2xl text-lg font-medium p-5 border-2 border-dark-green w-full h-64'
