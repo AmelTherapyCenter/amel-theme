@@ -289,6 +289,7 @@
                 {{/each}}
             </div>
             <div class="flex flex-col lg:max-w-[250px] max-w-none">
+                <div id="google_translate_element"></div>
                 {{!-- <h3 class="text-white font-body md:text-2xl text-xl font-bold mb-2">Follow Us</h3>
                 {{#each site.social_media }}
                     <a class="text-white font-body md:text-xl text-base">
@@ -302,6 +303,13 @@
     </footer>
     <!-- /Footer -->
     
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
             document.getElementById("footer-year").innerHTML = new Date().getFullYear();
