@@ -150,18 +150,56 @@ img {
   animation-name: fadeInUp;
 }
 
-#google_translate_element a {
-  color: var(--color-white);
+#google_translate_element {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+#google_translate_element a,
+#google_translate_element_2 a {
+  color: var(--color-light-cream);
   font-weight: normal;
 }
 
-#google_translate_element .goog-te-gadget {
-  color: var(--color-white);
+#google_translate_element .goog-te-gadget,
+#google_translate_element_2 .goog-te-gadget {
+  color: var(--color-light-cream);
+  font-size: 0;
 }
 
-#google_translate_element select {
+#google_translate_element select,
+#google_translate_element_2 select {
   background: transparent;
-  color: var(--color-white);
-  border: 1px solid var(--color-white);
-  padding: 10px;
+  color: var(--color-light-cream);
+  border: 1px solid var(--color-light-cream);
+  padding: 5px;
+  font-size: 10px;
+}
+
+#google_translate_element span,
+#google_translate_element_2 span {
+  display: none;
+}
+
+#google_translate_element_2 {
+  display: block;
+}
+
+@media screen and (max-width: 1023px) {
+  #google_translate_element {
+    display: none;
+  }
+
+  #google_translate_element_2 {
+    display: block;
+  }
+}
+
+body > .skiptranslate {
+  display: none;
+}
+
+body {
+  top: 0 !important;
 }

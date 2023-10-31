@@ -96,6 +96,8 @@ router.get('/resources', async (req, res, next) => {
 });
 
 router.get('/contact', async (req, res, next) => {
+  const params = req.query;
+
   res.render('contact', {
     page: {
       path: '/contact',
@@ -103,7 +105,8 @@ router.get('/contact', async (req, res, next) => {
       canonUrl: getCanonUrl(req.get('host'), req.url),
       description:
         'Contact us today to to learn more about our services, treatment approaches, and the compassionate professionals who make up our team. You can also find information on how to get started on your path to healing.'
-    }
+    },
+    params: !params ? false : params
   });
 });
 
@@ -117,20 +120,37 @@ router.post('/contact', async (req, res, next) => {
     message
   } = req.body;
 
-  const transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-      user: 'admin@wilkidigital.com',
-      pass: 'Random@13'
-    }
-  });
+  try {
+    // Owner uses outlook for email, however outlook authentication was not working with nodemailer
+    // So a separate gmail account was created solely to be used as a transporter
+    // email: ameltherapywebsite@gmail.com
+    // pass: Nina@2013
 
-  await transporter.sendMail({
-    from: `"New form submission from website" <${email}>`,
-    to: 'brianacebo@gmail.com',
-    subject: subject ? subject : 'Amel Therapy Center Website: Form Submission',
-    html: `<strong>Name:</strong> ${firstName} ${lastName}<br><strong>Email:</strong> ${email}<br><strong>Phone:</strong> ${phone}<br><strong>Subject:</strong> ${subject}<br><strong>Message:</strong> ${message}`
-  });
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: 'ameltherapywebsite@gmail.com',
+        pass: 'efoh ktrj xhxe cpqk'
+      }
+    });
+
+    await transporter.sendMail({
+      from: `"New form submission from website" <${email}>`,
+      to: 'fcapetillo@ameltherapycenter.com',
+      subject: subject
+        ? subject
+        : 'Amel Therapy Center Website: Form Submission',
+      html: `<strong>Name:</strong> ${firstName} ${lastName}<br><strong>Email:</strong> ${email}<br><strong>Phone:</strong> ${phone}<br><strong>Subject:</strong> ${subject}<br><strong>Message:</strong> ${message}`
+    });
+
+    res.redirect('/contact?success=true');
+  } catch (err) {
+    console.error(err);
+    res.redirect('/contact?error=true');
+  }
 });
 
 export default router;

@@ -59,6 +59,22 @@
   <div class='flex lg:flex-row flex-col'>
     <div class='lg:w-4/6 w-full pl-5 pr-8 pt-5'>
       <div class='w-full pt-8 pb-14 md:px-28 px-5 bg-white'>
+        {{#ifEquals params.success 'true'}}
+          <p
+            class='text-dark-green font-heading md:text-2xl text-xl text-center mb-10 mx-0 italic'
+          >
+            Message successfully sent.
+          </p>
+        {{/ifEquals}}
+
+        {{#ifEquals params.error 'true'}}
+          <p
+            class='text-dark-green font-heading md:text-2xl text-xl text-center mb-10 mx-0 italic'
+          >
+            Sorry, there was an error.
+          </p>
+        {{/ifEquals}}
+
         <h3
           class='text-dark-green text-center md:text-4xl text-2xl font-body font-bold max-w-[400px] mx-auto md:mb-0 mb-5'
         >
@@ -119,7 +135,6 @@
               <input
                 name='phone'
                 pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
-                maxlength='12'
                 oninvalid="this.setCustomValidity('Please use the format 123-456-7890')"
                 id='contactPhone'
                 type='tel'

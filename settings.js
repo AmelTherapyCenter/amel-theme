@@ -7,16 +7,8 @@ export const site = {
       title: 'Hours Of Opertation',
       information: [
         {
-          days: 'Mon - Thurs',
-          hours: ''
-        },
-        {
-          days: 'Fri - Sat',
-          hours: ''
-        },
-        {
-          days: 'Sun',
-          hours: ''
+          days: 'Monday - Friday',
+          hours: '8am-5pm'
         }
       ]
     }
@@ -25,7 +17,7 @@ export const site = {
     {
       title: 'Email',
       type: 'email',
-      information: 'info@amel.com'
+      information: 'fcapetillo@ameltherapycenter.com'
     },
     {
       title: 'Phone',
