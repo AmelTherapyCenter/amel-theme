@@ -8,7 +8,7 @@ export const site = {
       information: [
         {
           days: 'Monday - Friday',
-          hours: '8am-5pm'
+          hours: '9am-8pm'
         }
       ]
     }
